@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Меню</title>
+</head>
+<body>
+<header>
+    <div class="header_wrapper">
+        <div class="logo">
+            <h2>Italiano mafia</h2>
+        </div>
+        <ul class="navigation">
+            <li class="nav_button">Главная</li>
+            <li class="nav_button header_active_button">Меню</li>
+            <li class="nav_button">Акции</li>
+            <li class="nav_button">О нас</li>
+        </ul>
+        <button class="header_btn authorization_button">Авторизоваться</button>
+        <button class="header_btn cart_button">Корзина</button>
+    </div>
+</header>
+<main>
+    <section class="buy_pizza_block">
+        <div class="buy_pizza_wrapper">
+            <div class="buy_pizza_text">
+                <a class="buy_pizza_ref" href="index.html">Главная</a>
+                <a class="buy_pizza_ref active_ref" href="menu.html">Меню</a>
+                <h1 id="buy_pizza_header">Выбери свою пиццу</h1>
+                <hr id="buy_pizza_line">
+                <p>Пицца на любой вкус: мясная, сырная, вегетарианская,<br> острая, а также сытные блюда и десерты!</p>
+            </div>
+            <div class="buy_pizza_img_wrapper">
+                <img class="buy_pizza_img" src="../assets/pizza-and-vegetables.png" alt="pizza and vegetables">
+            </div>
+        </div>
+    </section>
+    <section class="bestseller_block">
+        <div class="bestseller_block_wrapper">
+            <div class="bestseller_text_and_picture">
+                <h1 id="bestseller"><span>Хит</span> продаж!</h1>
+                <p>ПИЦЦА ПЕППЕРОНИ</p>
+                <img class="bestseller_img" src="../assets/pepperoni-2.png" alt="pepperoni">
+            </div>
+            <div class="bestseller_order_window">
+                <h1 id="bestseller_price">29.99 <span>руб.</span></h1>
+                <p id="bestseller_per_one_item">за 1 шт.</p>
+                <div class="bestseller_cart_add">
+                    <button class="bestseller_sign">-</button>
+                    <p>1</p>
+                    <button class="bestseller_sign">+</button>
+                </div>
+                <button id="add_bestseller">В КОРЗИНУ</button>
+            </div>
+        </div>
+    </section>
+    <section class="menu_block">
+        <div class="menu_block_wrapper">
+            <h1 id="menu_header">МЕНЮ <span>ПИЦЦЕРИИ</span></h1>
+            <div class="menu_navigation">
+                <div class="menu_nav_btn">Пицца</div>
+                <div class="menu_nav_btn">Паста и ризотто</div>
+                <div class="menu_nav_btn">Супы</div>
+                <div class="menu_nav_btn">Салаты</div>
+                <div class="menu_nav_btn">Десерты</div>
+            </div>
+            <div class="slider_wrapper">
+                <div class="menu">
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer_wrapper">
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/clock.svg" alt="ringer">
+            <p class="contacts_text">Пн-Вс<br>с 9.00 до 24.00</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/delivery-car.png" alt="ringer">
+            <p class="contacts_text">Время доставки<br>30 мин</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/location.png" alt="ringer">
+            <p class="contacts_text">Адрес<br>ул. Дрозды, 15</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/insta-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/tg-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/vk-logo.svg" alt="ringer">
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/ringer.png" alt="ringer">
+            <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

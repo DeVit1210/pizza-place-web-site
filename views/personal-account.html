@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Личный кабинет</title>
+</head>
+<body>
+<header>
+    <div class="header_wrapper">
+        <div class="logo">
+            <h2>Italiano mafia</h2>
+        </div>
+        <ul class="navigation">
+            <li class="nav_button">Главная</li>
+            <li class="nav_button header_active_button">Меню</li>
+            <li class="nav_button">Акции</li>
+            <li class="nav_button">О нас</li>
+        </ul>
+        <button class="header_btn authorization_button">Пономарева Елизавета</button>
+        <button class="header_btn cart_button">Корзина</button>
+    </div>
+</header>
+<main>
+    <section class="personal_account_block">
+        <div class="personal_account_wrapper">
+            <div class="account_data">
+                <h1 class="personal_account_header">Профиль</h1>
+                <div class="identity_data">
+                    <form class="identity_data_form">
+                        <h3 class="order_making_form_subheader">Личные данные</h3>
+                        <label for="email">Email</label>
+                        <input type="email" class="input_field" id="email" name="email" value="mozolden7@gmail.com" disabled><br>
+                        <label for="name">Имя</label>
+                        <input type="text" class="input_field" id="name" name="name" value="Анонимный мафиози"><br>
+                        <label for="phone_number">Номер телефона</label>
+                        <input type="tel" class="input_field" id="phone_number" name="phone_number" value="+375(29)627-49-13"><br>
+                        <button type="submit" class="identity_data_btn">Обновить данные</button>
+                    </form>
+                </div>
+                <div class="coupon_container">
+                    <h3 class="order_making_form_subheader">Купоны</h3>
+                    <div class="coupon_item">
+                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
+                        <p class="coupon_item_date">до 24.04.2022</p>
+                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
+                        <div class="coupon_code_wrapper">
+                            <p class="coupon_code">HALytQ</p>
+                        </div>
+                    </div>
+                    <div class="coupon_item">
+                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
+                        <p class="coupon_item_date">до 24.04.2022</p>
+                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
+                        <div class="coupon_code_wrapper">
+                            <p class="coupon_code">HALytQ</p>
+                        </div>
+                    </div>
+                    <div class="coupon_item">
+                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
+                        <p class="coupon_item_date">до 24.04.2022</p>
+                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
+                        <div class="coupon_code_wrapper">
+                            <p class="coupon_code">HALytQ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="address_info_container">
+
+                </div>
+            </div>
+            <div class="previous_orders">
+                <h1 class="personal_account_header">История заказов</h1>
+                <div class="previous_orders_container">
+                    <div class="previous_order_item">
+                        <div class="order_datetime_and_delivery">
+                            <p class="order_datetime">21-04-2022 01:50</p>
+                            <p class="order_delivery">Доставка</p>
+                        </div>
+                        <div class="order_items_container">
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">4 сезона</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">2 шт</p>
+                                <p class="order_item_cost">29.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Пепперони Фреш</span>,
+                                    <span class="order_item_size">25 см</span>,
+                                    <span class="order_item_dough_type">тонкое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">19.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Классическая плюс</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">24.99р</p>
+                            </div>
+                        </div>
+                        <div class="previous_order_summary_wrapper">
+                            <p class="previous_order_summary_text">Итого:</p>
+                            <p class="previous_order_summary_number">104.96р</p>
+                        </div>
+                    </div>
+                    <div class="previous_order_item">
+                        <div class="order_datetime_and_delivery">
+                            <p class="order_datetime">21-04-2022 01:50</p>
+                            <p class="order_delivery">Доставка</p>
+                        </div>
+                        <div class="order_items_container">
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">4 сезона</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">2 шт</p>
+                                <p class="order_item_cost">29.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Пепперони Фреш</span>,
+                                    <span class="order_item_size">25 см</span>,
+                                    <span class="order_item_dough_type">тонкое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">19.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Классическая плюс</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">24.99р</p>
+                            </div>
+                        </div>
+                        <div class="previous_order_summary_wrapper">
+                            <p class="previous_order_summary_text">Итого:</p>
+                            <p class="previous_order_summary_number">104.96р</p>
+                        </div>
+                    </div>
+                    <div class="previous_order_item">
+                        <div class="order_datetime_and_delivery">
+                            <p class="order_datetime">21-04-2022 01:50</p>
+                            <p class="order_delivery">Доставка</p>
+                        </div>
+                        <div class="order_items_container">
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">4 сезона</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">2 шт</p>
+                                <p class="order_item_cost">29.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Пепперони Фреш</span>,
+                                    <span class="order_item_size">25 см</span>,
+                                    <span class="order_item_dough_type">тонкое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">19.99р</p>
+                            </div>
+                            <div class="order_item_wrapper">
+                                <p class="order_item_name">
+                                    <span class="order_item_name">Классическая плюс</span>,
+                                    <span class="order_item_size">35 см</span>,
+                                    <span class="order_item_dough_type">классическое</span>
+                                </p>
+                                <p class="order_item_quantity">1 шт</p>
+                                <p class="order_item_cost">24.99р</p>
+                            </div>
+                        </div>
+                        <div class="previous_order_summary_wrapper">
+                            <p class="previous_order_summary_text">Итого:</p>
+                            <p class="previous_order_summary_number">104.96р</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer_wrapper">
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/clock.svg" alt="ringer">
+            <p class="contacts_text">Пн-Вс<br>с 9.00 до 24.00</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/delivery-car.png" alt="ringer">
+            <p class="contacts_text">Время доставки<br>30 мин</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/location.png" alt="ringer">
+            <p class="contacts_text">Адрес<br>ул. Дрозды, 15</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/insta-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/tg-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/vk-logo.svg" alt="ringer">
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/ringer.png" alt="ringer">
+            <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
+        </div>
+    </div>
+</footer>

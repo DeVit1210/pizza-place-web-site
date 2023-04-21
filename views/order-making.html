@@ -1,0 +1,180 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Карточка товара</title>
+</head>
+<body>
+<header>
+    <div class="header_wrapper">
+        <div class="logo">
+            <h2>Italiano mafia</h2>
+        </div>
+        <ul class="navigation">
+            <li class="nav_button">Главная</li>
+            <li class="nav_button header_active_button">Меню</li>
+            <li class="nav_button">Акции</li>
+            <li class="nav_button">О нас</li>
+        </ul>
+        <button class="header_btn authorization_button">Авторизоваться</button>
+        <button class="header_btn cart_button">Корзина</button>
+    </div>
+</header>
+<main>
+    <section class="order_making_block">
+        <div class="order_making_block_wrapper">
+            <div class="order_making_delivery">
+                <div class="order_making_header">
+                    <h1>Оформление заказа</h1>
+                    <ul class="delivery_types">
+                        <li class="delivery_type active_delivery_type">Доставка</li>
+                        <li class="delivery_type">Самовывоз</li>
+                    </ul>
+                </div>
+                <div class="order_making_form_wrapper">
+                    <form>
+                        <h3 class="order_making_form_subheader">Адрес доставки</h3>
+                        <label for="street">Улица</label>
+                        <input type="text" class="input_field" id="street" name="street"><br>
+                        <label for="house">Дом</label>
+                        <input type="text" class="input_field" id="house" name="house"><br>
+                        <label for="flat">Квартира</label>
+                        <input type="text" class="input_field" id="flat" name="flat"><br>
+                        <label for="entrance">Подъезд</label>
+                        <input type="text" class="input_field" id="entrance" name="entrance"><br>
+                        <label for="door_code">Код двери</label>
+                        <input type="text" class="input_field" id="door_code" name="door_code"><br>
+                    </form>
+                    <h3 class="order_making_form_subheader">Информация</h3>
+                    <form class="info_form">
+                        <label for="phone_number">Телефон</label>
+                        <input type="tel" class="input_field" id="phone_number" name="phone_number"><br>
+                        <label for="email">E-mail</label>
+                        <input type="email" class="input_field" id="email" name="email"><br>
+                        <label for="coupon">Есть купон?</label>
+                        <input type="text" class="input_field" id="coupon" name="coupon"><br>
+                    </form>
+                    <h3 class="order_making_form_subheader">Способ оплаты</h3>
+                    <form class="payment_type_form">
+                        <select class="payment_types input_field">
+                            <option>Картой</option>
+                            <option>Наличными курьеру</option>
+                        </select>
+                    </form>
+                    <div class="submit_btn_wrapper">
+                        <div class="submit_btn">Отправить</div>
+                    </div>
+                </div>
+            </div>
+            <div class="current_order_wrapper">
+                <div class="current_order_header">
+                    <h1>Ваш заказ</h1>
+                </div>
+                <div class="current_order_container">
+                    <div class="current_order_item">
+                        <div class="current_order_item_close"></div>
+                        <div class="current_order_img">
+                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
+                        </div>
+                        <div class="current_order_info">
+                            <h3 class="order_info_header">4 сезона</h3>
+                            <p class="order_dough_and_size">Классическое, средняя</p>
+                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                            <div class="order_regulation">
+                                <div class="order_price_and_weight">
+                                    <p class="order_price">29.99 руб</p>
+                                    <p class="order_weight">600г</p>
+                                </div>
+                                <div class="order_cart_add_wrapper">
+                                    <div class="order_cart_add">
+                                        <button class="cart_add_sign">-</button>
+                                        <p>1</p>
+                                        <button class="cart_add_sign">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="current_order_item">
+                        <div class="current_order_item_close"></div>
+                        <div class="current_order_img">
+                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
+                        </div>
+                        <div class="current_order_info">
+                            <h3 class="order_info_header">4 сезона</h3>
+                            <p class="order_dough_and_size">Классическое, средняя</p>
+                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                            <div class="order_regulation">
+                                <div class="order_price_and_weight">
+                                    <p class="order_price">29.99 руб</p>
+                                    <p class="order_weight">600г</p>
+                                </div>
+                                <div class="order_cart_add_wrapper">
+                                    <div class="order_cart_add">
+                                        <button class="cart_add_sign">-</button>
+                                        <p>1</p>
+                                        <button class="cart_add_sign">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="current_order_item">
+                        <div class="current_order_item_close"></div>
+                        <div class="current_order_img">
+                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
+                        </div>
+                        <div class="current_order_info">
+                            <h3 class="order_info_header">4 сезона</h3>
+                            <p class="order_dough_and_size">Классическое, средняя</p>
+                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                            <div class="order_regulation">
+                                <div class="order_price_and_weight">
+                                    <p class="order_price">29.99 руб</p>
+                                    <p class="order_weight">600г</p>
+                                </div>
+                                <div class="order_cart_add_wrapper">
+                                    <div class="order_cart_add">
+                                        <button class="cart_add_sign">-</button>
+                                        <p>1</p>
+                                        <button class="cart_add_sign">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order_total_cost_wrapper">
+                    <h3 class="order_total_cost">Итого: 89.97 руб</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer_wrapper">
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/clock.svg" alt="ringer">
+            <p class="contacts_text">Пн-Вс<br>с 9.00 до 24.00</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/delivery-car.png" alt="ringer">
+            <p class="contacts_text">Время доставки<br>30 мин</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/location.png" alt="ringer">
+            <p class="contacts_text">Адрес<br>ул. Дрозды, 15</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/insta-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/tg-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/vk-logo.svg" alt="ringer">
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/ringer.png" alt="ringer">
+            <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
+        </div>
+    </div>
+</footer>

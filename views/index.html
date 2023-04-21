@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Pizza</title>
+</head>
+<body>
+<header>
+    <div class="header_wrapper">
+        <div class="logo">
+            <h2>Italiano mafia</h2>
+        </div>
+        <ul class="navigation">
+            <li class="nav_button header_active_button">Главная</li>
+            <li class="nav_button">Меню</li>
+            <li class="nav_button">Акции</li>
+            <li class="nav_button">О нас</li>
+        </ul>
+        <button class="header_btn authorization_button"></button>
+        <button class="header_btn cart_button">Корзина</button>
+    </div>
+</header>
+<main>
+    <section class="italian_food_block">
+        <div class="italian_food_block_wrapper">
+            <div class="italian_food_block_content">
+                <h1>Итальянская еда<br> с доставкой</h1>
+                <p>Пицца на любой вкус: мясная, сырная, вегетарианская,<br> острая, а также сытные блюда и десерты!</p>
+                <div class="menu_button_and_discount_block">
+                    <button class="menu_button">СМОТРЕТЬ МЕНЮ</button>
+                    <p>10%<br><span>Скидка на первый заказ</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bestseller_block">
+        <div class="bestseller_block_wrapper">
+            <div class="bestseller_text_and_picture">
+                <h1 id="bestseller"><span>Хит</span> продаж!</h1>
+                <p>ПИЦЦА ПЕППЕРОНИ</p>
+                <img class="bestseller_img" src="../assets/pepperoni-2.png" alt="pepperoni">
+            </div>
+            <div class="bestseller_order_window">
+                <h1 id="bestseller_price">29.99 <span>руб.</span></h1>
+                <p id="bestseller_per_one_item">за 1 шт.</p>
+                <div class="bestseller_cart_add">
+                    <button class="bestseller_sign">-</button>
+                    <p>1</p>
+                    <button class="bestseller_sign">+</button>
+                </div>
+                <button id="add_bestseller">В КОРЗИНУ</button>
+            </div>
+        </div>
+    </section>
+    <section class="menu_block">
+        <div class="menu_block_wrapper">
+            <h1 id="menu_header">МЕНЮ <span>ПИЦЦЕРИИ</span></h1>
+            <div class="menu_navigation">
+                <div class="menu_nav_btn">Пицца</div>
+                <div class="menu_nav_btn">Паста и ризотто</div>
+                <div class="menu_nav_btn">Супы</div>
+                <div class="menu_nav_btn">Салаты</div>
+                <div class="menu_nav_btn">Десерты</div>
+            </div>
+            <div class="slider_wrapper">
+                <div class="left_arrow"></div>
+                <div class="slider">
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img_wrapper">
+                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
+                        </div>
+                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
+                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
+                        <div class="pizza_weight_and_diameter">
+                            <p>460г</p>
+                            <p>32 см</p>
+                        </div>
+                        <div class="pizza_price">29.99 руб.</div>
+                        <div class="cart_add_wrapper">
+                            <div class="bestseller_cart_add">
+                                <button class="bestseller_sign">-</button>
+                                <p>1</p>
+                                <button class="bestseller_sign">+</button>
+                            </div>
+                            <div class="cart_img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_arrow"></div>
+            </div>
+            <div class="all_goods">
+                <p>Все товары</p>
+            </div>
+        </div>
+    </section>
+    <section class="pizza_place_pictures_block">
+        <div class="pizza_place_pictures_wrapper">
+            <h1 id="pizza_place_pictures_header">ВКУСНО И КОМФОРТНО</h1>
+            <div class="pizza_place_images">
+                <div class="single-image">
+                    <img src="../assets/pizza-place-1.jpg" alt="Description of your image">
+                </div>
+                <div class="double-images">
+                    <div class="image-row">
+                        <img src="../assets/pizza-place-2.jpg" alt="Description of your image">
+                    </div>
+                    <div class="image-row">
+                        <img src="../assets/pizza-place-1.jpg" alt="Description of your image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="chefs_block">
+        <div class="chefs_block_wrapper">
+            <h1 id="chefs_header">НАШИ <span>ПОВАРА-ПИЦЦАЙОЛО</span></h1>
+            <div class="chefs_images">
+                <div class="chef">
+                    <img src="../assets/chef-1.png" alt="chef-1">
+                    <p class="chef_name">Эдуардо Карбоначчи</p>
+                    <p class="chef_experience">7 лет опыта работы</p>
+                </div>
+                <div class="chef">
+                    <img src="../assets/chef-1.png" alt="chef-1">
+                    <p class="chef_name">Алехандро Таглиателли</p>
+                    <p class="chef_experience">5 лет опыта работы</p>
+                </div>
+                <div class="chef">
+                    <img src="../assets/chef-1.png" alt="chef-1">
+                    <p class="chef_name">Фелипе Лозаньо</p>
+                    <p class="chef_experience">12 лет опыта работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map_block">
+        <div class="map_block_wrapper">
+            <div class="map_screen">
+                <a href=""><img class="map_img" src="../assets/img_4.png" alt="screen_map"></a>
+            </div>
+            <div class="contacts">
+                <h3 id="contacts_header">Контакты</h3>
+                <hr id="contacts_line">
+                <div class="contacts_location">
+                    <img class="contacts_img" src="../assets/location.png" alt="location">
+                    <p class="contacts_text">ул. Дрозды, <br>15</p>
+                </div>
+                <div class="contacts_number">
+                    <img class="contacts_img" src="../assets/ringer.png" alt="ringer">
+                    <p class="contacts_text"><b>+375 (29) 515-46-88</b><br><span>9.00-24.00</span></p>
+                </div>
+                <div class="contacts_number">
+                    <img class="contacts_img" src="../assets/envelope.png" alt="envelope">
+                    <p class="contacts_text"><b>cosanostra@gmail.com</b><br><span>Общая эл. почта</span></p>
+                </div>
+            </div>
+            <div class="menu_button contacts_menu_button"><p>СМОТРЕТЬ МЕНЮ</p></div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer_wrapper">
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/clock.svg" alt="ringer">
+            <p class="contacts_text">Пн-Вс<br>с 9.00 до 24.00</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/delivery-car.png" alt="ringer">
+            <p class="contacts_text">Время доставки<br>30 мин</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/location.png" alt="ringer">
+            <p class="contacts_text">Адрес<br>ул. Дрозды, 15</p>
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/insta-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/tg-logo.svg" alt="ringer">
+            <img class="contacts_img" src="../assets/vk-logo.svg" alt="ringer">
+        </div>
+        <div class="footer_item">
+            <img class="contacts_img" src="../assets/ringer.png" alt="ringer">
+            <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
