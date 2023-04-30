@@ -26,6 +26,18 @@ function createCartItemTemplate(cartItem) {
     return $cartItem;
 }
 
+function createElement(tagName, className, textContent) {
+    let $elem = $("<" + tagName + ">");
+    if(className !== null) {
+        $elem.addClass(className);
+    }
+    if(textContent !== undefined) {
+        $elem.text(textContent)
+    }
+    return $elem;
+}
+
+
 function createItemCardTemplate(item) {
     let card = createNode("div", "card");
     let cardImageWrapper = createNode("div", "card_img_wrapper");
@@ -59,4 +71,14 @@ function createItemCardTemplate(item) {
     let invisibleIdHolder = createNode("div", "invisible", item._id);
     card.appendChild(invisibleIdHolder);
     return card;
+}
+function createNode(nodeType, classToApply, valueToSet) {
+    let node = document.createElement(nodeType);
+    if(classToApply !== null) {
+        node.classList.add(classToApply);
+    }
+    if(valueToSet !== undefined) {
+        node.textContent = valueToSet;
+    }
+    return node;
 }

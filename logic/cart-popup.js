@@ -28,17 +28,6 @@ $closeCartButton.on('click', () => {
     $cartPopup.css('display', 'none');
 })
 
-function createElement(tagName, className, textContent) {
-    let $elem = $("<" + tagName + ">");
-    if(className !== null) {
-        $elem.addClass(className);
-    }
-    if(textContent !== undefined) {
-        $elem.text(textContent)
-    }
-    return $elem;
-}
-
 function addEventListeners($cartItemsBlock) {
     let deleteButtons = document.querySelectorAll(".current_order_item_close");
     console.log(deleteButtons);

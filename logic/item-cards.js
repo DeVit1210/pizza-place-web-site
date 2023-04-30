@@ -1,13 +1,3 @@
-function createNode(nodeType, classToApply, valueToSet) {
-    let node = document.createElement(nodeType);
-    if(classToApply !== null) {
-        node.classList.add(classToApply);
-    }
-    if(valueToSet !== undefined) {
-        node.textContent = valueToSet;
-    }
-    return node;
-}
 
 function createImage(src, alt, classToApply) {
     let node = document.createElement("img");

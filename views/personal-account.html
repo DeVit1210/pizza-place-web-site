@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Личный кабинет</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
             <li class="nav_button">Акции</li>
             <li class="nav_button">О нас</li>
         </ul>
-        <button class="header_btn authorization_button">Пономарева Елизавета</button>
+        <button class="header_btn personal_account_button"></button>
         <button class="header_btn cart_button">Корзина</button>
     </div>
 </header>
@@ -31,40 +32,40 @@
                     <form class="identity_data_form">
                         <h3 class="order_making_form_subheader">Личные данные</h3>
                         <label for="email">Email</label>
-                        <input type="email" class="input_field" id="email" name="email" value="mozolden7@gmail.com" disabled><br>
+                        <input type="email" class="input_field" id="email" name="email" disabled><br>
                         <label for="name">Имя</label>
                         <input type="text" class="input_field" id="name" name="name" value="Анонимный мафиози"><br>
                         <label for="phone_number">Номер телефона</label>
-                        <input type="tel" class="input_field" id="phone_number" name="phone_number" value="+375(29)627-49-13"><br>
+                        <input type="tel" class="input_field" id="phone_number" name="phone_number"><br>
                         <button type="submit" class="identity_data_btn">Обновить данные</button>
                     </form>
                 </div>
                 <div class="coupon_container">
                     <h3 class="order_making_form_subheader">Купоны</h3>
-                    <div class="coupon_item">
-                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
-                        <p class="coupon_item_date">до 24.04.2022</p>
-                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
-                        <div class="coupon_code_wrapper">
-                            <p class="coupon_code">HALytQ</p>
-                        </div>
-                    </div>
-                    <div class="coupon_item">
-                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
-                        <p class="coupon_item_date">до 24.04.2022</p>
-                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
-                        <div class="coupon_code_wrapper">
-                            <p class="coupon_code">HALytQ</p>
-                        </div>
-                    </div>
-                    <div class="coupon_item">
-                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>
-                        <p class="coupon_item_date">до 24.04.2022</p>
-                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>
-                        <div class="coupon_code_wrapper">
-                            <p class="coupon_code">HALytQ</p>
-                        </div>
-                    </div>
+<!--                    <div class="coupon_item">-->
+<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
+<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
+<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
+<!--                        <div class="coupon_code_wrapper">-->
+<!--                            <p class="coupon_code">HALytQ</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="coupon_item">-->
+<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
+<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
+<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
+<!--                        <div class="coupon_code_wrapper">-->
+<!--                            <p class="coupon_code">HALytQ</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="coupon_item">-->
+<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
+<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
+<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
+<!--                        <div class="coupon_code_wrapper">-->
+<!--                            <p class="coupon_code">HALytQ</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="address_info_container">
 
@@ -194,6 +195,8 @@
             </div>
         </div>
     </section>
+    <script src="../logic/coupon_template_generator.js"></script>
+    <script src="../logic/personal-account.js"></script>
 </main>
 <footer>
     <div class="footer_wrapper">
