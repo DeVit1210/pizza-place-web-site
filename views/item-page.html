@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Карточка товара</title>
 </head>
 <body>
@@ -27,50 +28,35 @@
         <div class="item_block_wrapper">
             <a class="buy_pizza_ref" href="index.html">Главная</a>
             <a class="buy_pizza_ref" href="menu.html">Меню</a>
-            <a class="buy_pizza_ref active_ref" href="">Пепперони</a>
+            <a class="buy_pizza_ref active_ref" href=""></a>
             <div class="item-container">
                 <div class="item_picture">
                     <img src="../assets/4-seasons-pizza.png" alt="somePizza">
                 </div>
                 <div class="item_spec">
-                    <h3 id="item_name">Пепперони пицца</h3>
-                    <p class="item_description">30 см, традиционное тесто,<br>620г</p>
+<!--                    <h3 id="item_name">Пепперони фреш</h3>-->
+                    <h3 id="item_name"></h3>
+<!--                    <p class="item_description">30 см, традиционное тесто,<br>620г</p>-->
+                    <p class="item_description">
+                        <span id="item_diameter"></span>cм,
+                        <span id="item_dough"></span>,<br>
+                        <span id="item_weight"></span>г
+                    </p>
                     <div class="item_size_wrapper">
-                        <div class="item_size">Маленькая</div>
-                        <div class="item_size">Средняя</div>
-                        <div class="item_size">Большая</div>
+                        <div class="item_size" id="small_size">Маленькая</div>
+                        <div class="item_size" id="middle_size">Средняя</div>
+                        <div class="item_size" id="large_size">Большая</div>
                     </div>
                     <div class="item_dough_type_wrapper">
-                        <div class="item_dough_type">Традиционное</div>
-                        <div class="item_dough_type">Тонкое</div>
+                        <div class="item_dough_type" id="traditional_dough">Традиционное</div>
+                        <div class="item_dough_type" id="thin_dough">Тонкое</div>
                     </div>
                     <h3 id="item_add_toppings">Добавить к пицце: </h3>
-                    <div class="item_toppings_wrapper">
-                        <div class="topping">
-                            <img src="../assets/double-cheese.png" alt="double-cheese">
-                            <p class="topping_name">Двойной сыр</p>
-                            <p class="topping_cost">3.40</p>
-                        </div>
-                        <div class="topping">
-                            <img src="../assets/double-cheese.png" alt="double-cheese">
-                            <p class="topping_name">Двойной сыр</p>
-                            <p class="topping_cost">3.40</p>
-                        </div>
-                        <div class="topping">
-                            <img src="../assets/double-cheese.png" alt="double-cheese">
-                            <p class="topping_name">Двойной сыр</p>
-                            <p class="topping_cost">3.40</p>
-                        </div>
-                        <div class="topping">
-                            <img src="../assets/double-cheese.png" alt="double-cheese">
-                            <p class="topping_name">Двойной сыр</p>
-                            <p class="topping_cost">3.40</p>
-                        </div>
-                    </div>
+                    <div class="item_toppings_wrapper"></div>
                 </div>
             </div>
             <div class="item_add_cart">
-                <button class="item_add_cart_button">Добавить в корзину за 29.99 руб.</button>
+                <button class="item_add_cart_button">Добавить в корзину за <span id="pizza_cost"></span> руб.</button>
             </div>
         </div>
     </section>
@@ -99,6 +85,8 @@
             <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
         </div>
     </div>
+    <script src="../logic/item-page.js"></script>
+    <script src="../logic/window-set-up.js" data-scroll="100"></script>
 </footer>
 </body>
 </html>

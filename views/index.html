@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Pizza</title>
 </head>
 <body>
@@ -13,12 +14,20 @@
             <h2>Italiano mafia</h2>
         </div>
         <ul class="navigation">
-            <li class="nav_button header_active_button">Главная</li>
-            <li class="nav_button">Меню</li>
-            <li class="nav_button">Акции</li>
-            <li class="nav_button">О нас</li>
+            <li class="nav_button header_active_button">
+                <a href="index.html">Главная</a>
+            </li>
+            <li class="nav_button">
+                <a href="menu.html" id="menu_nav_btn">Меню</a>
+            </li>
+            <li class="nav_button">
+                <a href="#">Акции</a>
+            </li>
+            <li class="nav_button">
+                <a href="#pizza_place_pictures_header">О нас</a>
+            </li>
         </ul>
-        <button class="header_btn authorization_button"></button>
+        <button class="header_btn authorization_button">Авторизоваться</button>
         <button class="header_btn cart_button">Корзина</button>
     </div>
 </header>
@@ -66,7 +75,7 @@
             </div>
             <div class="slider_wrapper">
                 <div class="left_arrow"></div>
-                <div class="slider">
+                <div class="slider" id="full_menu">
                     <div class="card">
                         <div class="card_img_wrapper">
                             <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
@@ -199,6 +208,32 @@
             <div class="menu_button contacts_menu_button"><p>СМОТРЕТЬ МЕНЮ</p></div>
         </div>
     </section>
+    <div class="popup_container">
+        <section class="popup_block">
+            <div class="popup_block_wrapper">
+                <div class="popup_img">
+                    <img src="../assets/crazy-girl.jpg" alt="crazy-girl">
+                </div>
+                <div class="popup_authorization">
+                    <div class="close_block"></div>
+                    <h1 class="popup_authorization_header">Вернись в ряды нашей мафии!</h1>
+                    <form class="authorization_form">
+                        <label for="email">Email</label>
+                        <input type="text" autocomplete="off" class="input_field" id="email" name="email"><br>
+                        <label for="password">Пароль</label>
+                        <input type="text" autocomplete="off" class="input_field" id="password" name="password"><br>
+                    </form>
+                    <div class="submit_btn_wrapper">
+                        <div class="submit_btn">Отправить</div>
+                    </div>
+                    <div class="additional_questions_wrapper">
+                        <p class="authorization_additional_questions" id="forgot_password">Забыли пароль?</p>
+                        <p class="authorization_additional_questions" id="register">Зарегистрироваться</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 <footer>
     <div class="footer_wrapper">
@@ -224,6 +259,11 @@
             <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
         </div>
     </div>
+    <script src="../logic/popup.js"></script>
+    <script src="../logic/item-cards.js"></script>
+    <script src="../logic/window-set-up.js" data-scroll="1000"></script>
+    <script src="../logic/auth-pages-management.js"></script>
+    <script src="../logic/authorization.js"></script>
 </footer>
 </body>
 </html>

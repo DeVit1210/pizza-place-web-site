@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Меню</title>
 </head>
 <body>
@@ -19,7 +20,21 @@
             <li class="nav_button">О нас</li>
         </ul>
         <button class="header_btn authorization_button">Авторизоваться</button>
-        <button class="header_btn cart_button">Корзина</button>
+        <div class="header_btn cart_button">
+            <button class="header_btn">Корзина</button>
+        </div>
+        <div class="cart_popup">
+            <div class="close_cart_button_wrapper">
+                <button class="close_cart_button">Свернуть корзину</button>
+            </div>
+            <div class="cart_items_wrapper">
+                <div class="cart_items"></div>
+            </div>
+            <div class="cart_details">
+                <p class="cart_total_price">Сумма заказа: <span id="cart_total_price"></span> руб.</p>
+                <button class="cart_order_btn">Оформить заказ</button>
+            </div>
+        </div>
     </div>
 </header>
 <main>
@@ -67,71 +82,36 @@
                 <div class="menu_nav_btn">Десерты</div>
             </div>
             <div class="slider_wrapper">
-                <div class="menu">
-                    <div class="card">
-                        <div class="card_img_wrapper">
-                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
-                        </div>
-                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
-                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                        <div class="pizza_weight_and_diameter">
-                            <p>460г</p>
-                            <p>32 см</p>
-                        </div>
-                        <div class="pizza_price">29.99 руб.</div>
-                        <div class="cart_add_wrapper">
-                            <div class="bestseller_cart_add">
-                                <button class="bestseller_sign">-</button>
-                                <p>1</p>
-                                <button class="bestseller_sign">+</button>
-                            </div>
-                            <div class="cart_img"></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card_img_wrapper">
-                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
-                        </div>
-                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
-                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                        <div class="pizza_weight_and_diameter">
-                            <p>460г</p>
-                            <p>32 см</p>
-                        </div>
-                        <div class="pizza_price">29.99 руб.</div>
-                        <div class="cart_add_wrapper">
-                            <div class="bestseller_cart_add">
-                                <button class="bestseller_sign">-</button>
-                                <p>1</p>
-                                <button class="bestseller_sign">+</button>
-                            </div>
-                            <div class="cart_img"></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card_img_wrapper">
-                            <img class="card_img" src="../assets/somePizza.png" alt="some pizza">
-                        </div>
-                        <p class="pizza_name">Пицца четыре сыра<br>с томатным соусом</p>
-                        <p class="pizza_components">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                        <div class="pizza_weight_and_diameter">
-                            <p>460г</p>
-                            <p>32 см</p>
-                        </div>
-                        <div class="pizza_price">29.99 руб.</div>
-                        <div class="cart_add_wrapper">
-                            <div class="bestseller_cart_add">
-                                <button class="bestseller_sign">-</button>
-                                <p>1</p>
-                                <button class="bestseller_sign">+</button>
-                            </div>
-                            <div class="cart_img"></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="menu" id="full_menu"></div>
             </div>
         </div>
     </section>
+    <div class="popup_container">
+        <section class="popup_block">
+            <div class="popup_block_wrapper">
+                <div class="popup_img">
+                    <img src="../assets/crazy-girl.jpg" alt="crazy-girl">
+                </div>
+                <div class="popup_authorization">
+                    <div class="close_block"></div>
+                    <h1 class="popup_authorization_header">Вернись в ряды нашей мафии!</h1>
+                    <form class="authorization_form">
+                        <label for="email">Email</label>
+                        <input type="text" autocomplete="off" class="input_field" id="email" name="email"><br>
+                        <label for="password">Пароль</label>
+                        <input type="text" autocomplete="off" class="input_field" id="password" name="password"><br>
+                    </form>
+                    <div class="submit_btn_wrapper">
+                        <div class="submit_btn">Отправить</div>
+                    </div>
+                    <div class="additional_questions_wrapper">
+                        <p class="authorization_additional_questions" id="forgot_password">Забыли пароль?</p>
+                        <p class="authorization_additional_questions" id="register">Зарегистрироваться</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 <footer>
     <div class="footer_wrapper">
@@ -157,6 +137,14 @@
             <p class="contacts_text">Контактный номер<br>+375 (29) 515-46-88</p>
         </div>
     </div>
+    <script src="../logic/popup.js"></script>
+    <script src="../logic/template-generator.js"></script>
+    <script src="../logic/item-cards.js"></script>
+    <script src="../logic/window-set-up.js" data-scroll="1000"></script>
+    <script src="../logic/authorization.js"></script>
+    <script src="../logic/auth-pages-management.js"></script>
+    <script src="../logic/mutator-config.js"></script>
+    <script src="../logic/cart-popup.js"></script>
 </footer>
 </body>
 </html>
