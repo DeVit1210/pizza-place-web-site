@@ -65,7 +65,7 @@ const findCart = (req, res, next) => {
                 path: 'items',
                 populate: {
                     path: 'pizza',
-                    select: 'name ingredients -_id'
+                    select: 'name ingredients picture -_id'
                 }
             })
                 .then((cart) => {

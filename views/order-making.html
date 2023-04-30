@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Карточка товара</title>
 </head>
 <body>
@@ -73,85 +74,89 @@
                     <h1>Ваш заказ</h1>
                 </div>
                 <div class="current_order_container">
-                    <div class="current_order_item">
-                        <div class="current_order_item_close"></div>
-                        <div class="current_order_img">
-                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
-                        </div>
-                        <div class="current_order_info">
-                            <h3 class="order_info_header">4 сезона</h3>
-                            <p class="order_dough_and_size">Классическое, средняя</p>
-                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                            <div class="order_regulation">
-                                <div class="order_price_and_weight">
-                                    <p class="order_price">29.99 руб</p>
-                                    <p class="order_weight">600г</p>
-                                </div>
-                                <div class="order_cart_add_wrapper">
-                                    <div class="order_cart_add">
-                                        <button class="cart_add_sign">-</button>
-                                        <p>1</p>
-                                        <button class="cart_add_sign">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="current_order_item">
-                        <div class="current_order_item_close"></div>
-                        <div class="current_order_img">
-                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
-                        </div>
-                        <div class="current_order_info">
-                            <h3 class="order_info_header">4 сезона</h3>
-                            <p class="order_dough_and_size">Классическое, средняя</p>
-                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                            <div class="order_regulation">
-                                <div class="order_price_and_weight">
-                                    <p class="order_price">29.99 руб</p>
-                                    <p class="order_weight">600г</p>
-                                </div>
-                                <div class="order_cart_add_wrapper">
-                                    <div class="order_cart_add">
-                                        <button class="cart_add_sign">-</button>
-                                        <p>1</p>
-                                        <button class="cart_add_sign">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="current_order_item">
-                        <div class="current_order_item_close"></div>
-                        <div class="current_order_img">
-                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">
-                        </div>
-                        <div class="current_order_info">
-                            <h3 class="order_info_header">4 сезона</h3>
-                            <p class="order_dough_and_size">Классическое, средняя</p>
-                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>
-                            <div class="order_regulation">
-                                <div class="order_price_and_weight">
-                                    <p class="order_price">29.99 руб</p>
-                                    <p class="order_weight">600г</p>
-                                </div>
-                                <div class="order_cart_add_wrapper">
-                                    <div class="order_cart_add">
-                                        <button class="cart_add_sign">-</button>
-                                        <p>1</p>
-                                        <button class="cart_add_sign">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="current_order_item">-->
+<!--                        <div class="current_order_item_close"></div>-->
+<!--                        <div class="current_order_img">-->
+<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
+<!--                        </div>-->
+<!--                        <div class="current_order_info">-->
+<!--                            <h3 class="order_info_header">4 сезона</h3>-->
+<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
+<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
+<!--                            <div class="order_regulation">-->
+<!--                                <div class="order_price_and_weight">-->
+<!--                                    <p class="order_price">29.99 руб</p>-->
+<!--                                    <p class="order_weight">600г</p>-->
+<!--                                </div>-->
+<!--                                <div class="order_cart_add_wrapper">-->
+<!--                                    <div class="order_cart_add">-->
+<!--                                        <button class="cart_add_sign">-</button>-->
+<!--                                        <p>1</p>-->
+<!--                                        <button class="cart_add_sign">+</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="current_order_item">-->
+<!--                        <div class="current_order_item_close"></div>-->
+<!--                        <div class="current_order_img">-->
+<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
+<!--                        </div>-->
+<!--                        <div class="current_order_info">-->
+<!--                            <h3 class="order_info_header">4 сезона</h3>-->
+<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
+<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
+<!--                            <div class="order_regulation">-->
+<!--                                <div class="order_price_and_weight">-->
+<!--                                    <p class="order_price">29.99 руб</p>-->
+<!--                                    <p class="order_weight">600г</p>-->
+<!--                                </div>-->
+<!--                                <div class="order_cart_add_wrapper">-->
+<!--                                    <div class="order_cart_add">-->
+<!--                                        <button class="cart_add_sign">-</button>-->
+<!--                                        <p>1</p>-->
+<!--                                        <button class="cart_add_sign">+</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="current_order_item">-->
+<!--                        <div class="current_order_item_close"></div>-->
+<!--                        <div class="current_order_img">-->
+<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
+<!--                        </div>-->
+<!--                        <div class="current_order_info">-->
+<!--                            <h3 class="order_info_header">4 сезона</h3>-->
+<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
+<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
+<!--                            <div class="order_regulation">-->
+<!--                                <div class="order_price_and_weight">-->
+<!--                                    <p class="order_price">29.99 руб</p>-->
+<!--                                    <p class="order_weight">600г</p>-->
+<!--                                </div>-->
+<!--                                <div class="order_cart_add_wrapper">-->
+<!--                                    <div class="order_cart_add">-->
+<!--                                        <button class="cart_add_sign">-</button>-->
+<!--                                        <p>1</p>-->
+<!--                                        <button class="cart_add_sign">+</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="order_total_cost_wrapper">
-                    <h3 class="order_total_cost">Итого: 89.97 руб</h3>
+                    <h3 class="order_total_cost"></h3>
                 </div>
             </div>
         </div>
     </section>
+    <script src="../logic/template-generator.js"></script>
+    <script src="../logic/order-making-cart-template-generator.js"></script>
+    <script src="../logic/cart-event-listeners.js"></script>
+    <script src="../logic/order-making.js"></script>
 </main>
 <footer>
     <div class="footer_wrapper">

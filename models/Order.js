@@ -8,12 +8,14 @@ const OrderSchema = new Schema({
         required: true
     },
     date: Date,
+    delivery: String,
     items : [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CartItem'
-    }]
+    }],
+    totalCost: Number
 }, {collection : "orders"})
 
 const Order = mongoose.model('Order', OrderSchema);
 
-module.exports = Order;
+module.exports = Order

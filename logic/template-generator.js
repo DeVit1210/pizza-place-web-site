@@ -1,6 +1,11 @@
 function createCartItemTemplate(cartItem) {
     let $cartItem = createElement("div", 'cart_item')
     $cartItem.append(createElement('div', 'current_order_item_close'));
+    cartItemInfoTemplate(cartItem, $cartItem);
+    return $cartItem;
+}
+
+function cartItemInfoTemplate(cartItem, $cartItem) {
     let $itemHeader = createElement('h3','order_info_header', cartItem.pizza.name)
     $itemHeader.css('margin-top', '6px');
     $cartItem.append($itemHeader);
@@ -23,7 +28,6 @@ function createCartItemTemplate(cartItem) {
     $regulation.append($cartAddWrapper);
     $cartItem.append($regulation);
     $cartItem.append(createElement('div', 'invisible', String(cartItem._id)));
-    return $cartItem;
 }
 
 function createElement(tagName, className, textContent) {
