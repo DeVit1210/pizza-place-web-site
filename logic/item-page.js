@@ -125,7 +125,7 @@ $('.item_add_cart_button').on('click', () => {
     const cartItem = {
         pizza: id,
         dough: pizzaDough.textContent,
-        diameter: pizzaDiameter.textContent,
+        size: pizzaDiameter.textContent,
         quantity: 1,
         weight: pizzaWeight.textContent,
         totalPrice: pizzaCost.textContent

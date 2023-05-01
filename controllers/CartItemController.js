@@ -34,8 +34,6 @@ const find = (req, res, next) => {
     })
 }
 
-
-
 module.exports = {
     updateQuantity, find
 }

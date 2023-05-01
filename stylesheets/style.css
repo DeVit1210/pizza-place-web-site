@@ -1171,6 +1171,10 @@ footer {
     font-weight: lighter;
 }
 
+.coupon_field {
+    width: 50%;
+}
+
 .submit_btn_wrapper {
     width: 100%;
     background-color: #d94811;
@@ -1179,6 +1183,18 @@ footer {
     font-weight: bolder;
     border-radius: 10px;
     margin-top: 50px;
+}
+
+.coupon_apply_btn {
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    background-color: #d94811;
+    border: none;
+    outline: none;
+    border-radius: 10px;
 }
 
 .submit_btn {

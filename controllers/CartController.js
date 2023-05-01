@@ -12,7 +12,7 @@ const addItem = async (req, res, next) => {
         const cartItem= {
             pizza: new Types.ObjectId(item.pizza),
             dough: item.dough.split(' ')[0],
-            size: item.diameter === 35 ? "большая" : (item.diameter === 30 ? "средняя" : "маленькая"),
+            size: item.size === '35' ? "большая" : (item.size === '30' ? "средняя" : "маленькая"),
             weight: item.weight,
             quantity: item.quantity,
             totalPrice: item.totalPrice

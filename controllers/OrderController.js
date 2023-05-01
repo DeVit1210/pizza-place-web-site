@@ -15,9 +15,7 @@ const create = async (req, res) => {
             date: Date.now(),
             items: currentCart.items,
             delivery: req.body.delivery,
-            totalCost: currentCart.items.reduce((accumulator, item) => {
-                return accumulator + (item.quantity * item.totalPrice);
-            }, 0)
+            totalCost: req.body.totalCost
         })
         console.log(order);
         await order.save();
