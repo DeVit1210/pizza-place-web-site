@@ -3,7 +3,6 @@ const mongoose = require('mongoose').default;
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-
 const pizzaRouter = require('./routes/PizzaRoute')
 const userRouter = require('./routes/UserRoute')
 const cartRouter = require('./routes/CartRoute')
@@ -23,7 +22,7 @@ db.once('open', () => {
     console.log("Database connection established!");
 })
 
-const app = express();
+const app= express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use(cors());

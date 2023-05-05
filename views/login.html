@@ -2,7 +2,9 @@
 <h1 class="popup_authorization_header">Вернись в ряды нашей мафии!</h1>
 <form class="authorization_form">
     <label for="email">Email</label>
-    <input type="text" autocomplete="off" class="input_field" id="email" name="email"><br>
+    <div class="input_field" data-error="К сожалению, этот email уже занят!">
+        <input type="text" autocomplete="off" class="input" id="email" name="email"><br>
+    </div>
     <label for="password">Пароль</label>
     <input type="text" autocomplete="off" class="input_field" id="password" name="password"><br>
 </form>

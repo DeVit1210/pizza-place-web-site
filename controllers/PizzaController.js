@@ -23,19 +23,38 @@ const findAll = (req, res, next) => {
 }
 
 // add pizza
-const add = (req, res, next) => {
-    const configurationData = req.body.configuration;
+const add = (req, res) => {
+    console.log(req.body);
+    const configurationData = {
+        large: {
+            diameter: 35,
+            weight: req.body.big_weight,
+            price: req.body.big_price
+        },
+        medium: {
+            diameter: 35,
+            weight: req.body.medium_weight,
+            price: req.body.medium_price
+        },
+        small: {
+            diameter: 35,
+            weight: req.body.small_weight,
+            price: req.body.small_price
+        }
+    }
     const pizzaConfiguration = new PizzaConfig(configurationData);
     pizzaConfiguration.save()
         .then((config) => {
-            const pizza = new Pizza({
+            const pizza ={
                 name: req.body.name,
                 ingredients: req.body.ingredients,
-                itemType: req.body.itemType,
-                picture: req.body.picture,
+                itemType: req.body.type.toLowerCase(),
                 configuration: config
-            })
-            pizza.save()
+            }
+            if(req.files) {
+                pizza.picture = "../" + req.files[0].path;
+            }
+            Pizza.create(pizza)
                 .then(response => res.json({message: "pizza added successfully"}))
                 .catch(err => res.json(err));
         })

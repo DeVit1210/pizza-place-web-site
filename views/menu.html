@@ -14,10 +14,16 @@
             <h2>Italiano mafia</h2>
         </div>
         <ul class="navigation">
-            <li class="nav_button">Главная</li>
+            <li class="nav_button">
+                <a href="index.html">Главная</a>
+            </li>
             <li class="nav_button header_active_button">Меню</li>
-            <li class="nav_button">Акции</li>
-            <li class="nav_button">О нас</li>
+            <li class="nav_button">
+                <a href="index.html#contacts_header">Контакты</a>
+            </li>
+            <li class="nav_button">
+                <a href="index.html#pizza_place_pictures_header">О нас</a>
+            </li>
         </ul>
         <button class="header_btn authorization_button">Авторизоваться</button>
         <div class="header_btn cart_button">
@@ -75,11 +81,11 @@
         <div class="menu_block_wrapper">
             <h1 id="menu_header">МЕНЮ <span>ПИЦЦЕРИИ</span></h1>
             <div class="menu_navigation">
-                <div class="menu_nav_btn">Пицца</div>
-                <div class="menu_nav_btn">Паста и ризотто</div>
-                <div class="menu_nav_btn">Супы</div>
-                <div class="menu_nav_btn">Салаты</div>
-                <div class="menu_nav_btn">Десерты</div>
+                <div class="menu_nav_btn">Классические</div>
+                <div class="menu_nav_btn">Премиум</div>
+                <div class="menu_nav_btn">Острые</div>
+                <div class="menu_nav_btn">Легенды</div>
+                <div class="menu_nav_btn">Новинки</div>
             </div>
             <div class="slider_wrapper">
                 <div class="menu" id="full_menu"></div>
@@ -97,9 +103,13 @@
                     <h1 class="popup_authorization_header">Вернись в ряды нашей мафии!</h1>
                     <form class="authorization_form">
                         <label for="email">Email</label>
-                        <input type="text" autocomplete="off" class="input_field" id="email" name="email"><br>
+                        <div class="input_field">
+                            <input type="text" autocomplete="off" class="input" id="email" name="email"><br>
+                        </div>
                         <label for="password">Пароль</label>
-                        <input type="text" autocomplete="off" class="input_field" id="password" name="password"><br>
+                        <div class="input_field">
+                            <input type="text" autocomplete="off" class="input" id="password" name="password"><br>
+                        </div>
                     </form>
                     <div class="submit_btn_wrapper">
                         <div class="submit_btn">Отправить</div>
@@ -139,6 +149,7 @@
     </div>
     <script src="../logic/template-generator.js"></script>
     <script src="../logic/popup.js"></script>
+    <script src="../logic/auth-check.js"></script>
     <script src="../logic/item-cards.js"></script>
     <script src="../logic/window-set-up.js" data-scroll="1000"></script>
     <script src="../logic/authorization.js"></script>
@@ -146,6 +157,7 @@
     <script src="../logic/mutator-config.js"></script>
     <script src="../logic/cart-event-listeners.js"></script>
     <script src="../logic/cart-popup.js"></script>
+    <script src="../logic/validation.js"></script>
 </footer>
 </body>
 </html>

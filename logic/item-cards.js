@@ -26,21 +26,52 @@ function loadPizzaItems(itemType) {
     })
 }
 
+function changeItemCount(sign) {
+    const itemCount = card.querySelector('.item_count')
+    if(sign.textContent === '+' && itemCount.textContent !== '10') {
+        itemCount.textContent = Number(itemCount.textContent) + 1;
+    } else if(sign.textContent === '-' && itemCount.textContent !== '1') {
+        itemCount.textContent = Number(itemCount.textContent) - 1;
+    }
+}
+
+function addItemToCart(cartItemData) {
+    $.ajax({
+        url: "http://localhost:8080/api/cart/add",
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            token: localStorage.getItem('token'),
+            item: cartItemData
+        }),
+        success: (createdItemId) => {
+            $.ajax({
+                url: "http://localhost:8080/api/cartItem/" + createdItemId,
+                type: "GET",
+                success: (createdItem) => {
+                    $('.cart_items').append(createCartItemTemplate(createdItem))
+                    addEventListeners($cartItemsBlock, 'cart_item', 'cart_total_price')
+                    $('.item_count').textContent = '1';
+                }
+            })
+        },
+        error: (message) => {
+            console.log(message);
+            openPopup();
+        }
+    })
+}
+
 function addCardEventListeners(card) {
     card.addEventListener('click', () => {
-        const id = document.querySelector('.invisible').textContent;
+        const id = card.querySelector('.invisible').textContent;
         console.log(id);
         window.location.href = "../views/item-page.html?id=" + id;
     })
     card.querySelectorAll('.bestseller_sign').forEach(sign => {
         sign.addEventListener('click', () => {
             event.stopPropagation();
-            const itemCount = card.querySelector('.item_count')
-            if(sign.textContent === '+' && itemCount.textContent !== '10') {
-                itemCount.textContent = Number(itemCount.textContent) + 1;
-            } else if(sign.textContent === '-' && itemCount.textContent !== '1') {
-                itemCount.textContent = Number(itemCount.textContent) - 1;
-            }
+            changeItemCount(sign);
         })
     })
     card.querySelector('.cart_img').addEventListener('click', () => {
@@ -48,40 +79,18 @@ function addCardEventListeners(card) {
         const cartItemData = {
             pizza: card.querySelector('.invisible').textContent,
             dough: 'традиционное',
-            diameter: card.querySelector('.pizza_diameter').textContent.split('')[0],
+            diameter: card.querySelector('.pizza_diameter').textContent.split(' ')[0],
             quantity: card.querySelector('.item_count').textContent,
             weight: card.querySelector('.pizza_weight').textContent.split(' ')[0],
             totalPrice: card.querySelector('.pizza_price').textContent.split(' ')[0]
         }
-        $.ajax({
-            url: "http://localhost:8080/api/cart/add",
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                token: localStorage.getItem('token'),
-                item: cartItemData
-            }),
-            success: (createdItemId) => {
-                $.ajax({
-                    url: "http://localhost:8080/api/cartItem/" + createdItemId,
-                    type: "GET",
-                    success: (createdItem) => {
-                        $('.cart_items').append(createCartItemTemplate(createdItem))
-                        $('.item_count').textContent = '1';
-                    }
-                })
-            },
-            error: (message) => {
-                console.log(message);
-                openPopup();
-            }
-        })
+        addItemToCart(cartItemData);
     })
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
-    loadPizzaItems("пицца");
+    loadPizzaItems("классические");
 })
 
 const menuNavButtons = document.querySelectorAll('.menu_nav_btn');

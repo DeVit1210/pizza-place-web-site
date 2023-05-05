@@ -3,22 +3,42 @@ const bcrypt = require('bcryptjs')
 const {response} = require("express");
 const jwt = require('jsonwebtoken')
 const Cart = require('../models/Cart')
-const CartItem = require("../models/CartItem");
 const {Types} = require("mongoose");
 const JWT_SECRET = "my-jwt-secret-HSDirksjeLd"
+const admin_username = "admin@gmail.com"
+const admin_password = "my_admin_password"
 
 function validateRequestBody(body, callback) {
     if(!body.username || typeof body.username !== 'string') {
-        callback("invalid username");
+        callback("Email введен некорректно!");
     }
     if(!body.password || typeof body.password !== 'string') {
-        callback("invalid password")
+        callback("Пароль должен быть длиной 8-15 символов и содержать хотя бы 1 цифру")
     }
 }
+
+function isAdmin(username, password) {
+    return username === admin_username && password === admin_password;
+}
+
+const check = (req, res) => {
+    const token = req.headers.authorization;
+    if(token) {
+        try {
+            const user = jwt.verify(token, JWT_SECRET);
+            res.json(user);
+        } catch (err) {
+            res.status(400).send(err.message);
+        }
+    } else {
+        res.status(400).send("not authorized");
+    }
+}
+
 const register = async (req, res, next) => {
     const {username, password, phoneNumber} = req.body;
     validateRequestBody(req.body, (message) => {
-        res.status(400).json({message: message})
+        res.status(400).send(message)
     })
     const hashedPassword = await bcrypt.hash(password, 10);
     User.create({
@@ -39,27 +59,26 @@ const register = async (req, res, next) => {
     })
 }
 
-const login = async (req, res, next) => {
+const login = async (req, res) => {
     const {username, password} = req.body;
-    if (!username || typeof username !== 'string') {
-        return res.status(400).json({message: "invalid username"})
-    }
-    if (!password || typeof password !== 'string') {
-        return res.status(400).json({message: "invalid password"})
-    }
-    const user = await User.findOne({username: username}).lean();
-    if(!user) {
-        return res.status(400).json({message: "user not found"})
-    }
-    const isPasswordCorrect = await bcrypt.compare(password, user.password)
-    if(isPasswordCorrect) {
-        const token = jwt.sign({
-            id: user._id,
-            username: user.username,
-        }, JWT_SECRET)
-        res.json({token: token});
+    if(isAdmin(username, password)) {
+        res.json({token: "admin"});
     } else {
-        res.json({message: "invalid access attempt!"})
+        const user = await User.findOne({username: username}).lean();
+        if (!user) {
+            res.status(400).send("wrong username");
+        } else {
+            const isPasswordCorrect = await bcrypt.compare(password, user.password)
+            if (isPasswordCorrect) {
+                const token = jwt.sign({
+                    id: user._id,
+                    username: user.username,
+                }, JWT_SECRET)
+                res.json({token: token});
+            } else {
+                res.status(400).send("wrong password");
+            }
+        }
     }
 }
 
@@ -108,5 +127,5 @@ const findByUsername = (req, res, next) => {
 }
 
 module.exports = {
-    register, login, changePassword, findAll, findByUsername, JWT_SECRET
+    register, login, changePassword, findAll, findByUsername, check, JWT_SECRET
 }

@@ -330,7 +330,6 @@ main {
     font-size: 96px;
     color: #f4f9ff;
     align-self: center;
-    /*letter-spacing: 3px;*/
     font-weight: lighter;
     margin-top: 80px;
     margin-bottom: 0;
@@ -1156,19 +1155,38 @@ footer {
 }
 
 .input_field {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     background-color: #202123;
     height: 40px;
     width: 90%;
+}
+.input {
+    width: 100%;
+    height: 100%;
+    outline: none;
     border: none #202123;
     border-bottom: 2px solid #ffd05e;
-    outline: none;
     caret-color: #f4f9ff;
     color: #f4f9ff;
     letter-spacing: 1px;
     font-size: 14px;
     font-style: italic;
     font-weight: lighter;
+    background-color: #202123;
+}
+
+.input_field[data-error] input {
+    border: none #202123;
+    border-bottom: 2px solid #d94811;
+    color: #d94811;
+}
+
+.input_field[data-error]::after {
+    content: attr(data-error);
+    font-family: Montserrat, sans-serif;
+    color: #d94811;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .coupon_field {
@@ -1467,4 +1485,152 @@ footer {
     font-weight: bold;
     text-shadow: 0 4px 4px rgba(0,0,0,0.5);
     z-index: 5;
+}
+
+.main_info_block {
+    background-color: #202123;
+    margin-left: 75px;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+.main_info_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_info {
+    background-color: black;
+    height: 100px;
+    min-width: 200px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    color: #202123;
+    font-weight: bold;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main_info_image {
+    padding: 25px;
+}
+
+.main_info_content {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.main_info_header {
+    font-family: Montserrat, sans-serif;
+    color: #f4f9ff;
+    font-size: 12px;
+}
+
+#current_day_orders_quantity {
+    font-family: Appetite, sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+#total_current_day_income {
+    font-family: Appetite, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: white;
+    margin: 0;
+}
+
+#current_day_popular_pizza {
+    font-family: Appetite, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    color: white;
+    margin: 0;
+}
+
+.all_orders_info {
+    background-color: #202123;
+    border-radius: 10px;
+    margin: 10px 50px 10px 75px;
+}
+
+.all_orders_wrapper {
+    max-height: 500px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    color: #f4f9ff;
+    font-family: Montserrat, sans-serif;
+}
+
+.order_table_container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.order_table_container table {
+    border: 3px solid #d94811;
+    border-radius: 10px;
+}
+
+.order_table_container td {
+    min-width: 150px;
+}
+
+.items_block {
+    background-color: #202123;
+    border-radius: 10px;
+    margin: 10px 50px 10px 75px;
+}
+
+.items_block_wrapper {
+    padding: 20px;
+}
+
+.add_item_form_container {
+    max-height: 400px;
+    width: 50%;
+    overflow: auto;
+    color: #f4f9ff;
+}
+
+.add_item_form_container::-webkit-scrollbar {
+    display: none;
+}
+
+.add_item_form_container .input_field {
+    width: 90%;
+    margin-right: 30px;
+}
+
+.admin_form_submit {
+    height: 30px;
+    width: 90%;
+    background-color: #d94811;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none #202123;
+    border-radius: 10px;
+    outline: none;
+}
+
+.coupons_block {
+    background-color: #202123;
+    border-radius: 10px;
+    margin: 10px 50px 10px 75px;
+}
+
+.coupon_block_wrapper {
+    padding: 20px;
 }

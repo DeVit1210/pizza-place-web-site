@@ -54,6 +54,33 @@ const findByUserId = (req, res, next) => {
     } else res.status(400).json('invalid access attempt!');
 }
 
+const findByDate = (req, res) => {
+    const today = new Date();
+    const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const endOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+    Order.find({
+        date: {
+            $gte: startOfDay,
+            $lt: endOfDay
+        }
+    }).populate({
+        path: "items",
+        populate: {
+            path: "pizza",
+            select: "_id name"
+        }
+
+    })
+        .then(response => res.json(response))
+        .catch(err => res.status(400).json({message: err.message}))
+}
+
+const findAll = (req, res) => {
+    Order.find()
+        .then(response => res.json(response))
+        .catch(err => res.status(400).json({message: err.message}))
+}
+
 module.exports = {
-    create, findByUserId
+    create, findByUserId, findByDate, findAll
 }

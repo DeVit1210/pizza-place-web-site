@@ -1,9 +1,10 @@
 const PizzaController = require("../controllers/PizzaController")
 const express = require("express")
+const upload = require('../middleware/upload')
 
 const router = express.Router()
 
-router.post("/add", PizzaController.add)
+router.post("/add", upload.any(),  PizzaController.add)
 router.get("/", PizzaController.findAll)
 router.put("/:id", PizzaController.update)
 router.delete("/:id", PizzaController.del)

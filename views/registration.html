@@ -1,13 +1,19 @@
 <!--<div class="popup_registration">-->
 <!--</div>-->
 <h1 class="popup_authorization_header">Вступи в ряды нашей мафии!</h1>
-<form class="registration_form">
+<form class="registration_form" autocomplete="off">
     <label for="reg_phone_number">Номер телефона</label>
-    <input type="text" class="input_field" id="reg_phone_number" name="phoneNumber"><br>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="reg_phone_number" name="phoneNumber"><br>
+    </div>
     <label for="reg_email">Email</label>
-    <input type="text" class="input_field" id="reg_email" name="email"><br>
+    <div class="input_field">
+        <input type="text" class="input" id="reg_email" name="email"><br>
+    </div>
     <label for="reg_password">Пароль</label>
-    <input type="text" class="input_field" id="reg_password" name="password"><br>
+    <div class="input_field">
+        <input type="text" class="input" id="reg_password" name="password"><br>
+    </div>
     <div class="submit_btn_wrapper">
         <div class="submit_btn" id ="registration_btn">Отправить</div>
     </div>

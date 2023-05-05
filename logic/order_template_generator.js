@@ -1,14 +1,13 @@
-// <!--                        <div class="previous_order_summary_wrapper">-->
-//     <!--                            <p class="previous_order_summary_text">Итого:</p>-->
-//     <!--                            <p class="previous_order_summary_number">104.96р</p>-->
-//     <!--                        </div>-->
-
-
-    function createPreviousOrderItemTemplate(order) {
+function getDate(dateStringFormat) {
+    const date = new Date(Date.parse(dateStringFormat));
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+    return date.toLocaleDateString('en-US', options)
+}
+function createPreviousOrderItemTemplate(order) {
     console.log(order);
     const previousOrder = createElement('div', 'previous_order_item');
     const dateTimeAndDelivery = createElement('div', 'order_datetime_and_delivery');
-    dateTimeAndDelivery.append(createElement('p', 'order_datetime', order.date));
+    dateTimeAndDelivery.append(createElement('p', 'order_datetime', getDate(order.date)));
     dateTimeAndDelivery.append(createElement('p', 'order_delivery', order.delivery));
     previousOrder.append(dateTimeAndDelivery);
     const orderItemsContainer = createElement('div', 'order_items_container');

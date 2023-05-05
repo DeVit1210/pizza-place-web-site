@@ -2,7 +2,10 @@ const $couponContainer = $('.coupon_container');
 $.ajax({
     url: 'http://localhost:8080/api/coupon',
     type: "GET",
-    contentType: "application/json",
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token')
+    },
     success: (coupons) => {
         $couponContainer.empty();
         console.log(coupons);
@@ -23,4 +26,10 @@ $.ajax({
         console.log(orders);
         $.each(orders, (index, order) => $previousOrdersContainer.append(createPreviousOrderItemTemplate(order)))
     }
+})
+
+const $logoutButton = $('.logout_button');
+$logoutButton.on('click', () => {
+    localStorage.removeItem('token');
+    window.location.href = '../views/index.html';
 })

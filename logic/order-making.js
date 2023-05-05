@@ -29,8 +29,8 @@ function applyCouponListener(items) {
         $.ajax({
             url: 'http://localhost:8080/api/coupon/apply',
             type: "POST",
+            contentType: 'application/json',
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": localStorage.getItem('token')
             },
             data: JSON.stringify({
@@ -38,7 +38,6 @@ function applyCouponListener(items) {
                 items: items
             }),
             success: (discount) => {
-
                 const previousTotalCost = Number($orderTotalCost.text().split(' ')[1]);
                 $orderTotalCost.text("Итого: " +  (previousTotalCost - discount).toFixed(2) + " руб.");
             }
@@ -51,12 +50,12 @@ $submitBtn.on('click', () => {
     $.ajax({
         url: "http://localhost:8080/api/order/create",
         type: "POST",
+        contentType: "application/json",
         headers: {
-            "ContentType": "application/json",
             "Authorization": localStorage.getItem('token')
         },
         data: JSON.stringify({
-            totalCost: $('.order_total_cost').textContent.split(' ')[1]
+            totalCost: document.querySelector('.order_total_cost').textContent.split(' ')[1]
         }),
         success: () => {
             window.location.href = '../views/index.html';

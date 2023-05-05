@@ -21,12 +21,24 @@ $cartButton.on('click', (event) => {
     })
 })
 
+function closeCart() {
+    $cartPopup.css('display', 'none')
+}
+
 let $closeCartButton = $('.close_cart_button');
-$closeCartButton.on('click', () => {
-    $cartPopup.css('display', 'none');
-})
+$closeCartButton.on('click', () => closeCart())
 
 $cartOrderButton = $('.cart_order_btn');
 $cartOrderButton.on('click', () => {
-    window.location.href = '../views/order-making.html';
+    $.ajax({
+        url: "http://localhost:8080/api/user/check",
+        type: "GET",
+        success: () => {
+            window.location.href = '../views/order-making.html';
+        },
+        error: () => {
+            closeCart();
+            openPopup();
+        }
+    })
 })
