@@ -33,6 +33,9 @@ $cartOrderButton.on('click', () => {
     $.ajax({
         url: "http://localhost:8080/api/user/check",
         type: "GET",
+        headers: {
+            "Authorization": localStorage.getItem('token')
+        },
         success: () => {
             window.location.href = '../views/order-making.html';
         },

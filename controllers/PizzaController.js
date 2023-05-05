@@ -108,6 +108,12 @@ const findBy = (req, res, next) => {
         })
 }
 
+const findBestseller = (req, res) => {
+    // temporal implementation
+    Pizza.find()
+        .then(response => res.json(response[0]))
+}
+
 module.exports = {
-    findAll, add, update, del, find, findBy
+    findAll, add, update, del, find, findBy, findBestseller
 }

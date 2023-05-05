@@ -10,5 +10,6 @@ router.put("/:id", PizzaController.update)
 router.delete("/:id", PizzaController.del)
 router.get("/:id", PizzaController.find)
 router.post("/find", PizzaController.findBy)
+router.get("/bestseller/find", PizzaController.findBestseller)
 
 module.exports = router;

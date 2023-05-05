@@ -26,8 +26,8 @@ function loadPizzaItems(itemType) {
     })
 }
 
-function changeItemCount(sign) {
-    const itemCount = card.querySelector('.item_count')
+function changeItemCount(parentElement, sign) {
+    const itemCount = parentElement.querySelector('.item_count')
     if(sign.textContent === '+' && itemCount.textContent !== '10') {
         itemCount.textContent = Number(itemCount.textContent) + 1;
     } else if(sign.textContent === '-' && itemCount.textContent !== '1') {
@@ -71,7 +71,7 @@ function addCardEventListeners(card) {
     card.querySelectorAll('.bestseller_sign').forEach(sign => {
         sign.addEventListener('click', () => {
             event.stopPropagation();
-            changeItemCount(sign);
+            changeItemCount(card, sign);
         })
     })
     card.querySelector('.cart_img').addEventListener('click', () => {
@@ -85,6 +85,7 @@ function addCardEventListeners(card) {
             totalPrice: card.querySelector('.pizza_price').textContent.split(' ')[0]
         }
         addItemToCart(cartItemData);
+        bestsellerOrderWindow.querySelector('.item_count').textContent = '1';
     })
 }
 

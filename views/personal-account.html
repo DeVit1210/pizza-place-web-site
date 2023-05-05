@@ -35,168 +35,31 @@
             <div class="account_data">
                 <h1 class="personal_account_header">Профиль</h1>
                 <div class="identity_data">
-                    <form class="identity_data_form">
+                    <form class="identity_data_form" autocomplete="off">
                         <h3 class="order_making_form_subheader">Личные данные</h3>
                         <label for="email">Email</label>
-                        <input type="email" class="input_field" id="email" name="email" disabled><br>
+                        <div class="input_field">
+                            <input type="email" class="input" id="email" name="email" disabled><br>
+                        </div>
                         <label for="name">Имя</label>
-                        <input type="text" class="input_field" id="name" name="name" value="Анонимный мафиози"><br>
+                        <div class="input_field">
+                            <input type="text" class="input" id="name" name="name" value="Анонимный мафиози"><br>
+                        </div>
                         <label for="phone_number">Номер телефона</label>
-                        <input type="tel" class="input_field" id="phone_number" name="phone_number"><br>
+                        <div class="input_field">
+                            <input type="tel" class="input" id="phone_number" name="phone_number"><br>
+                        </div>
                         <button type="submit" class="identity_data_btn">Обновить данные</button>
                     </form>
                 </div>
                 <div class="coupon_container">
                     <h3 class="order_making_form_subheader">Купоны</h3>
-<!--                    <div class="coupon_item">-->
-<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
-<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
-<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
-<!--                        <div class="coupon_code_wrapper">-->
-<!--                            <p class="coupon_code">HALytQ</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="coupon_item">-->
-<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
-<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
-<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
-<!--                        <div class="coupon_code_wrapper">-->
-<!--                            <p class="coupon_code">HALytQ</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="coupon_item">-->
-<!--                        <h1 class="coupon_item_header">2 пиццы по цене 1</h1>-->
-<!--                        <p class="coupon_item_date">до 24.04.2022</p>-->
-<!--                        <p class="coupon_item_description">Закажи 2 и более пиццы диаметром 30 или 35 см и скидку в 100% на самую дешевую!</p>-->
-<!--                        <div class="coupon_code_wrapper">-->
-<!--                            <p class="coupon_code">HALytQ</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
-                <div class="address_info_container">
-                </div>
+                <div class="address_info_container"></div>
             </div>
             <div class="previous_orders">
                 <h1 class="personal_account_header">История заказов</h1>
-                <div class="previous_orders_container">
-<!--                    <div class="previous_order_item">-->
-<!--                        <div class="order_datetime_and_delivery">-->
-<!--                            <p class="order_datetime">21-04-2022 01:50</p>-->
-<!--                            <p class="order_delivery">Доставка</p>-->
-<!--                        </div>-->
-<!--                        <div class="order_items_container">-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">4 сезона</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">2 шт</p>-->
-<!--                                <p class="order_item_cost">29.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Пепперони Фреш</span>,-->
-<!--                                    <span class="order_item_size">25 см</span>,-->
-<!--                                    <span class="order_item_dough_type">тонкое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">19.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Классическая плюс</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">24.99р</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="previous_order_summary_wrapper">-->
-<!--                            <p class="previous_order_summary_text">Итого:</p>-->
-<!--                            <p class="previous_order_summary_number">104.96р</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="previous_order_item">-->
-<!--                        <div class="order_datetime_and_delivery">-->
-<!--                            <p class="order_datetime">21-04-2022 01:50</p>-->
-<!--                            <p class="order_delivery">Доставка</p>-->
-<!--                        </div>-->
-<!--                        <div class="order_items_container">-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">4 сезона</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">2 шт</p>-->
-<!--                                <p class="order_item_cost">29.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Пепперони Фреш</span>,-->
-<!--                                    <span class="order_item_size">25 см</span>,-->
-<!--                                    <span class="order_item_dough_type">тонкое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">19.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Классическая плюс</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">24.99р</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="previous_order_summary_wrapper">-->
-<!--                            <p class="previous_order_summary_text">Итого:</p>-->
-<!--                            <p class="previous_order_summary_number">104.96р</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="previous_order_item">-->
-<!--                        <div class="order_datetime_and_delivery">-->
-<!--                            <p class="order_datetime">21-04-2022 01:50</p>-->
-<!--                            <p class="order_delivery">Доставка</p>-->
-<!--                        </div>-->
-<!--                        <div class="order_items_container">-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">4 сезона</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">2 шт</p>-->
-<!--                                <p class="order_item_cost">29.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Пепперони Фреш</span>,-->
-<!--                                    <span class="order_item_size">25 см</span>,-->
-<!--                                    <span class="order_item_dough_type">тонкое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">19.99р</p>-->
-<!--                            </div>-->
-<!--                            <div class="order_item_wrapper">-->
-<!--                                <p class="order_item_name">-->
-<!--                                    <span class="order_item_name">Классическая плюс</span>,-->
-<!--                                    <span class="order_item_size">35 см</span>,-->
-<!--                                    <span class="order_item_dough_type">классическое</span>-->
-<!--                                </p>-->
-<!--                                <p class="order_item_quantity">1 шт</p>-->
-<!--                                <p class="order_item_cost">24.99р</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="previous_order_summary_wrapper">-->
-<!--                            <p class="previous_order_summary_text">Итого:</p>-->
-<!--                            <p class="previous_order_summary_number">104.96р</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
+                <div class="previous_orders_container"></div>
             </div>
         </div>
     </section>

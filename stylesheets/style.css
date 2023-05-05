@@ -318,24 +318,28 @@ main {
     background-color: black;
     width: 40%;
     height: 50%;
-    margin: 220px 20px 0;
+    margin: 100px 20px 0;
     vertical-align: center;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
+.bestseller_order_window h1 {
+    color: #f4f9ff;
+}
+
 #bestseller_price {
+    display: inline-block;
     font-family: Appetite, sans-serif;
     font-size: 96px;
-    color: #f4f9ff;
     align-self: center;
     font-weight: lighter;
     margin-top: 80px;
     margin-bottom: 0;
 }
 
-#bestseller_price span {
+.bestseller_order_window span {
     font-size: 40px;
     letter-spacing: 3px;
 }

@@ -27,6 +27,9 @@ $.ajax({
         $.each(orders, (index, order) => $previousOrdersContainer.append(createPreviousOrderItemTemplate(order)))
     }
 })
+$.ajax({
+    url: "http://localhost:8080/api/user/find"
+})
 
 const $logoutButton = $('.logout_button');
 $logoutButton.on('click', () => {

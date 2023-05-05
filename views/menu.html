@@ -62,18 +62,19 @@
         <div class="bestseller_block_wrapper">
             <div class="bestseller_text_and_picture">
                 <h1 id="bestseller"><span>Хит</span> продаж!</h1>
-                <p>ПИЦЦА ПЕППЕРОНИ</p>
+                <p id="bestseller_name"></p>
                 <img class="bestseller_img" src="../assets/pepperoni-2.png" alt="pepperoni">
             </div>
             <div class="bestseller_order_window">
-                <h1 id="bestseller_price">29.99 <span>руб.</span></h1>
+                <h1><p id="bestseller_price"></p><span> руб.</span></h1>
                 <p id="bestseller_per_one_item">за 1 шт.</p>
                 <div class="bestseller_cart_add">
-                    <button class="bestseller_sign">-</button>
-                    <p>1</p>
-                    <button class="bestseller_sign">+</button>
+                    <div class="bestseller_sign">-</div>
+                    <p class="item_count">1</p>
+                    <div class="bestseller_sign">+</div>
                 </div>
                 <button id="add_bestseller">В КОРЗИНУ</button>
+                <div class="invisible"></div>
             </div>
         </div>
     </section>
@@ -150,13 +151,14 @@
     <script src="../logic/template-generator.js"></script>
     <script src="../logic/popup.js"></script>
     <script src="../logic/auth-check.js"></script>
-    <script src="../logic/item-cards.js"></script>
     <script src="../logic/window-set-up.js" data-scroll="1000"></script>
     <script src="../logic/authorization.js"></script>
     <script src="../logic/auth-pages-management.js"></script>
     <script src="../logic/mutator-config.js"></script>
     <script src="../logic/cart-event-listeners.js"></script>
     <script src="../logic/cart-popup.js"></script>
+    <script src="../logic/bestseller.js"></script>
+    <script src="../logic/item-cards.js"></script>
     <script src="../logic/validation.js"></script>
 </footer>
 </body>
