@@ -64,6 +64,16 @@ function applyCouponListener(items) {
 
 const $submitBtn = $('.submit_btn');
 $submitBtn.on('click', () => {
+    const obj = {
+        totalCost: $orderTotalCost.text(),
+        address: {
+            street: $("#address_form #street").val(),
+            house: $("#address_form #house").val(),
+            flat: $("#address_form #flat").val(),
+            entrance: $("#address_form #entrance").val(),
+            doorCode: $("#address_form #doorCode").val()
+        }
+    }
     $.ajax({
         url: "http://localhost:8080/api/order/create",
         type: "POST",
@@ -71,9 +81,7 @@ $submitBtn.on('click', () => {
         headers: {
             "Authorization": localStorage.getItem('token')
         },
-        data: JSON.stringify({
-            totalCost: $orderTotalCost.textContent
-        }),
+        data: JSON.stringify(obj),
         success: () => {
             window.location.href = '../views/index.html';
         },

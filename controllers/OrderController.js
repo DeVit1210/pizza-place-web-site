@@ -15,7 +15,8 @@ const create = async (req, res) => {
             date: Date.now(),
             items: currentCart.items,
             delivery: req.body.delivery,
-            totalCost: req.body.totalCost
+            totalCost: req.body.totalCost,
+            address: req.body.address
         })
         console.log(order);
         await order.save();

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const cartItemSchema = require('../models/CartItem')
+const AddressSchema = require('../models/Address').schema;
+
 
 const OrderSchema = new Schema({
     userId: {
@@ -13,6 +14,7 @@ const OrderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CartItem'
     }],
+    address: AddressSchema,
     totalCost: Number
 }, {collection : "orders"})
 

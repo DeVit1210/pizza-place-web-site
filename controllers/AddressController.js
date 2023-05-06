@@ -10,7 +10,6 @@ const add = (req, res) => {
         try {
             const user = jwt.verify(token, JWT_SECRET);
             Address.create({
-                userId: user.id,
                 street: req.body.street,
                 house: req.body.house,
                 flat: req.body.flat,

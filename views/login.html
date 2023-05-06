@@ -2,16 +2,19 @@
 <h1 class="popup_authorization_header">Вернись в ряды нашей мафии!</h1>
 <form class="authorization_form">
     <label for="email">Email</label>
-    <div class="input_field" data-error="К сожалению, этот email уже занят!">
+    <div class="input_field">
         <input type="text" autocomplete="off" class="input" id="email" name="email"><br>
     </div>
     <label for="password">Пароль</label>
-    <input type="text" autocomplete="off" class="input_field" id="password" name="password"><br>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="password" name="password"><br>
+    </div>
 </form>
 <div class="submit_btn_wrapper">
-    <div class="submit_btn" id="login_btn">Отправить</div>
+    <div class="submit_btn">Отправить</div>
 </div>
 <div class="additional_questions_wrapper">
     <p class="authorization_additional_questions" id="forgot_password">Забыли пароль?</p>
     <p class="authorization_additional_questions" id="register">Зарегистрироваться</p>
 </div>
+<script src="../logic/authorization.js"></script>

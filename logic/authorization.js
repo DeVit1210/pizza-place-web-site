@@ -1,4 +1,5 @@
 let submitBtn = document.querySelector('.submit_btn');
+console.log(submitBtn);
 submitBtn.addEventListener('click', () => {
     event.preventDefault();
     document.querySelectorAll('.input_field').forEach(inputField => {
@@ -43,3 +44,14 @@ submitBtn.addEventListener('click', () => {
 
 })
 
+$('#register').click(() => {
+    let $authBlock = $('.popup_authorization')
+    $authBlock.innerHTML = '';
+    $authBlock.load('../views/registration.html');
+})
+
+
+let closeButton = document.querySelector('.close_block');
+closeButton.addEventListener("click", () => {
+    closePopup()
+})

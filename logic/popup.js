@@ -24,8 +24,3 @@ function closePopup() {
 }
 authorizationButton.addEventListener("click", handleAuthButtonClick);
 
-let closeButton = document.querySelector('.close_block');
-closeButton.addEventListener("click", () => {
-    closePopup()
-})
-

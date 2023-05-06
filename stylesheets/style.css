@@ -1257,6 +1257,7 @@ footer {
 
 .current_order_img {
     flex-basis: 40%;
+    align-self: center;
 }
 
 .current_order_img img {

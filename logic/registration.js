@@ -1,4 +1,4 @@
-let registrationBtn = document.querySelector('.submit_btn');
+const registrationBtn = document.querySelector('.submit_btn');
 registrationBtn.addEventListener("click", (event) => {
     event.preventDefault();
     const user = {
@@ -13,13 +13,13 @@ registrationBtn.addEventListener("click", (event) => {
         contentType: "application/json",
         data: JSON.stringify(user),
         error: (err) => {
-            alert(err)
+            console.log(err)
         }
     })
-    popupContainer.classList.remove('active_popup');
-    authorizationPopup.classList.remove('active_popup')
-    document.body.classList.remove("scroll_lock")
-    header.style.height = '120px';
-    header.style.transition = 'height 1s ease';
+    closePopup();
+})
 
+let closeBtn = document.querySelector('.close_block');
+closeBtn.addEventListener("click", () => {
+    closePopup()
 })
