@@ -2,8 +2,8 @@ function createOrderMakingCartItemTemplate(cartItem) {
     const $currentOrderItem = createElement('div', 'current_order_item');
     $currentOrderItem.append(createElement('div', 'current_order_item_close'))
     const $imageWrapper = createElement('div', 'current_order_img');
-    let $image = $('<div>');
-    $image.attr("src", "../assets/4-seasons-pizza.png");
+    let $image = $('<img>');
+    $image.attr("src", cartItem.pizza.picture);
     $image.attr("alt", "order_item_picture");
     $imageWrapper.append($image);
     $currentOrderItem.append($imageWrapper);

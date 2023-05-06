@@ -1035,6 +1035,8 @@ footer {
 }
 
 .buy_pizza_wrapper {
+    background: url(../assets/pizza.png) no-repeat right;
+    background-size: 75%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1258,7 +1260,8 @@ footer {
 }
 
 .current_order_img img {
-    width: 100%;
+    width: 85%;
+    padding-left: 18px;
 }
 
 .current_order_info {
