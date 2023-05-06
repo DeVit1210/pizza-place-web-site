@@ -17,7 +17,9 @@
             <li class="nav_button">
                 <a href="index.html">Главная</a>
             </li>
-            <li class="nav_button header_active_button">Меню</li>
+            <li class="nav_button">
+                <a href="menu.html">Меню</a>
+            </li>
             <li class="nav_button">
                 <a href="index.html#contacts_header">Контакты</a>
             </li>
@@ -41,35 +43,53 @@
                     </ul>
                 </div>
                 <div class="order_making_form_wrapper">
-                    <form>
+                    <form id="address_form" autocomplete="off">
                         <h3 class="order_making_form_subheader">Адрес доставки</h3>
                         <label for="street">Улица</label>
-                        <input type="text" class="input_field" id="street" name="street"><br>
+                        <div class="input_field">
+                            <input type="text" class="input" id="street" name="street"><br>
+                        </div>
                         <label for="house">Дом</label>
-                        <input type="text" class="input_field" id="house" name="house"><br>
+                        <div class="input_field">
+                            <input type="text" class="input" id="house" name="house"><br>
+                        </div>
                         <label for="flat">Квартира</label>
-                        <input type="text" class="input_field" id="flat" name="flat"><br>
+                        <div class="input_field">
+                            <input type="text" class="input" id="flat" name="flat"><br>
+                        </div>
                         <label for="entrance">Подъезд</label>
-                        <input type="text" class="input_field" id="entrance" name="entrance"><br>
-                        <label for="door_code">Код двери</label>
-                        <input type="text" class="input_field" id="door_code" name="door_code"><br>
+                        <div class="input_field">
+                            <input type="text" class="input" id="entrance" name="entrance"><br>
+                        </div>
+                        <label for="doorCode">Код двери</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="doorCode" name="doorCode"><br>
+                        </div>
                     </form>
                     <h3 class="order_making_form_subheader">Информация</h3>
-                    <form class="info_form">
+                    <form id="identity_data_form" autocomplete="off">
                         <label for="phone_number">Телефон</label>
-                        <input type="tel" class="input_field" id="phone_number" name="phone_number"><br>
+                        <div class="input_field">
+                            <input type="tel" class="input" id="phone_number" name="phone_number"><br>
+                        </div>
                         <label for="email">E-mail</label>
-                        <input type="email" class="input_field" id="email" name="email"><br>
+                        <div class="input_field">
+                            <input type="email" class="input" id="email" name="email"><br>
+                        </div>
                         <label for="coupon">Есть купон?</label>
-                        <input type="text" class="input_field coupon_field" id="coupon" name="coupon">
-                        <div class="coupon_apply_btn">Применить</div><br>
+                        <div class="input_field">
+                            <input type="text" class="input coupon_field" id="coupon" name="coupon">
+                        </div>
+                        <div class="coupon_apply_btn" style="display: inline-block">Применить</div><br>
                     </form>
                     <h3 class="order_making_form_subheader">Способ оплаты</h3>
                     <form class="payment_type_form">
-                        <select class="payment_types input_field">
-                            <option>Картой</option>
-                            <option>Наличными курьеру</option>
-                        </select>
+                        <div class="input_field">
+                            <select class="payment_types input">
+                                <option>Картой</option>
+                                <option>Наличными курьеру</option>
+                            </select>
+                        </div>
                     </form>
                     <div class="submit_btn_wrapper">
                         <div class="submit_btn">Отправить</div>
@@ -80,88 +100,16 @@
                 <div class="current_order_header">
                     <h1>Ваш заказ</h1>
                 </div>
-                <div class="current_order_container">
-<!--                    <div class="current_order_item">-->
-<!--                        <div class="current_order_item_close"></div>-->
-<!--                        <div class="current_order_img">-->
-<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
-<!--                        </div>-->
-<!--                        <div class="current_order_info">-->
-<!--                            <h3 class="order_info_header">4 сезона</h3>-->
-<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
-<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
-<!--                            <div class="order_regulation">-->
-<!--                                <div class="order_price_and_weight">-->
-<!--                                    <p class="order_price">29.99 руб</p>-->
-<!--                                    <p class="order_weight">600г</p>-->
-<!--                                </div>-->
-<!--                                <div class="order_cart_add_wrapper">-->
-<!--                                    <div class="order_cart_add">-->
-<!--                                        <button class="cart_add_sign">-</button>-->
-<!--                                        <p>1</p>-->
-<!--                                        <button class="cart_add_sign">+</button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="current_order_item">-->
-<!--                        <div class="current_order_item_close"></div>-->
-<!--                        <div class="current_order_img">-->
-<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
-<!--                        </div>-->
-<!--                        <div class="current_order_info">-->
-<!--                            <h3 class="order_info_header">4 сезона</h3>-->
-<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
-<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
-<!--                            <div class="order_regulation">-->
-<!--                                <div class="order_price_and_weight">-->
-<!--                                    <p class="order_price">29.99 руб</p>-->
-<!--                                    <p class="order_weight">600г</p>-->
-<!--                                </div>-->
-<!--                                <div class="order_cart_add_wrapper">-->
-<!--                                    <div class="order_cart_add">-->
-<!--                                        <button class="cart_add_sign">-</button>-->
-<!--                                        <p>1</p>-->
-<!--                                        <button class="cart_add_sign">+</button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="current_order_item">-->
-<!--                        <div class="current_order_item_close"></div>-->
-<!--                        <div class="current_order_img">-->
-<!--                            <img src="../assets/4-seasons-pizza.png" alt="four-seasons">-->
-<!--                        </div>-->
-<!--                        <div class="current_order_info">-->
-<!--                            <h3 class="order_info_header">4 сезона</h3>-->
-<!--                            <p class="order_dough_and_size">Классическое, средняя</p>-->
-<!--                            <p class="order_info_ingredients">Моцарелла, горгонзола, страморца, стракино, томатный соус</p>-->
-<!--                            <div class="order_regulation">-->
-<!--                                <div class="order_price_and_weight">-->
-<!--                                    <p class="order_price">29.99 руб</p>-->
-<!--                                    <p class="order_weight">600г</p>-->
-<!--                                </div>-->
-<!--                                <div class="order_cart_add_wrapper">-->
-<!--                                    <div class="order_cart_add">-->
-<!--                                        <button class="cart_add_sign">-</button>-->
-<!--                                        <p>1</p>-->
-<!--                                        <button class="cart_add_sign">+</button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
+                <div class="current_order_container"></div>
                 <div class="order_total_cost_wrapper">
-                    <h3 class="order_total_cost"></h3>
+                    <h3 class="order_total_cost">Итого: <span id="total_cost"></span> руб.</h3>
                 </div>
             </div>
         </div>
     </section>
     <script src="../logic/template-generator.js"></script>
     <script src="../logic/order-making-cart-template-generator.js"></script>
+    <script src="../logic/mutator-config.js" data-price="total_cost" data-item="current_order_container"></script>
     <script src="../logic/cart-event-listeners.js"></script>
     <script src="../logic/order-making.js"></script>
     <script src="../logic/auth-check.js"></script>

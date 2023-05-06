@@ -6,7 +6,9 @@ function addEventListeners($cartItemsBlock, itemBlockName, totalPriceBlockName) 
             deleteItemFromCart(button.parentNode);
         });
     })
-    const cartTotalPrice = document.getElementById(totalPriceBlockName);
+    console.log(totalPriceBlockName);
+    console.log(document);
+    const cartTotalPrice = document.querySelector("#" + totalPriceBlockName);
     console.log(cartTotalPrice)
     const cartItemsBlock = $cartItemsBlock.get(0);
     console.log(cartItemsBlock);

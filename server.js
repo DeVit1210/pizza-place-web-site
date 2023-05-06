@@ -10,6 +10,7 @@ const orderRouter = require('./routes/OrderRoute')
 const toppingRouter = require('./routes/ToppingRoute')
 const cartItemRouter = require('./routes/CartItemRoute')
 const couponRouter = require('./routes/CouponRoute')
+const addressRouter = require('./routes/AddressRoute')
 
 mongoose.connect('mongodb://127.0.0.1:27017/pizza-db');
 const db = mongoose.connection;
@@ -34,6 +35,7 @@ app.use('/api/order', orderRouter)
 app.use('/api/toppings', toppingRouter);
 app.use('/api/cartItem', cartItemRouter)
 app.use('/api/coupon', couponRouter)
+app.use('/api/address', addressRouter)
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

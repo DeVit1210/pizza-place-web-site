@@ -1,5 +1,5 @@
 $currentOrderContainer = $('.current_order_container');
-$orderTotalCost = $('.order_total_cost')
+$orderTotalCost = $('#total_cost')
 
 $.ajax({
     url: "http://localhost:8080/api/cart/find",
@@ -9,17 +9,34 @@ $.ajax({
         "Authorization": localStorage.getItem('token')
     },
     success: (cart) => {
-        console.log(cart);
         $currentOrderContainer.empty();
         $.each(cart.items, (index, item) => {
             $currentOrderContainer.append(createOrderMakingCartItemTemplate(item))
         });
-        console.log($orderTotalCost.get(0));
-        $orderTotalCost.text("Итого: " +  cart.items.reduce((accumulator, item) => {
-            return accumulator + (item.quantity * item.totalPrice);
-        }, 0).toFixed(2) + " руб.")
         applyCouponListener(cart.items);
-        addEventListeners($currentOrderContainer, "current_order_item", "order_total_cost");
+        addEventListeners($currentOrderContainer, "current_order_item", "total_cost");
+    }
+})
+
+$.ajax({
+    url: 'http://localhost:8080/api/user/find',
+    type: "GET",
+    headers: {
+        "Authorization": localStorage.getItem('token')
+    },
+    success: (data) => {
+        const user = data.user;
+        console.log(user);
+        $("#identity_data_form #email").val(user.username);
+        $("#identity_data_form #phone_number").val(user.phoneNumber);
+        if(user.address) {
+            const address = user.address;
+            $("#address_form #house").val(address.house);
+            $("#address_form #flat").val(address.flat);
+            $("#address_form #street").val(address.street);
+            $("#address_form #entrance").val(address.entrance);
+            $("#address_form #doorCode").val(address.doorCode);
+        }
     }
 })
 
@@ -38,8 +55,8 @@ function applyCouponListener(items) {
                 items: items
             }),
             success: (discount) => {
-                const previousTotalCost = Number($orderTotalCost.text().split(' ')[1]);
-                $orderTotalCost.text("Итого: " +  (previousTotalCost - discount).toFixed(2) + " руб.");
+                const previousTotalCost = Number($orderTotalCost);
+                $orderTotalCost.text((previousTotalCost - discount).toFixed(2));
             }
         })
     })}
@@ -55,7 +72,7 @@ $submitBtn.on('click', () => {
             "Authorization": localStorage.getItem('token')
         },
         data: JSON.stringify({
-            totalCost: document.querySelector('.order_total_cost').textContent.split(' ')[1]
+            totalCost: $orderTotalCost.textContent
         }),
         success: () => {
             window.location.href = '../views/index.html';

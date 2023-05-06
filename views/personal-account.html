@@ -22,11 +22,23 @@
                 <a href="index.html#contacts_header">Контакты</a>
             </li>
             <li class="nav_button">
-                <a href="index.html#pizza_place_pictures_header">О нас</a>
+                <a href="order-making.html">Заказ</a>
             </li>
         </ul>
         <button class="header_btn logout_button">Выйти из аккаунта</button>
         <button class="header_btn cart_button">Корзина</button>
+        <div class="cart_popup">
+            <div class="close_cart_button_wrapper">
+                <button class="close_cart_button">Свернуть корзину</button>
+            </div>
+            <div class="cart_items_wrapper">
+                <div class="cart_items"></div>
+            </div>
+            <div class="cart_details">
+                <p class="cart_total_price">Сумма заказа: <span id="cart_total_price"></span> руб.</p>
+                <button class="cart_order_btn">Оформить заказ</button>
+            </div>
+        </div>
     </div>
 </header>
 <main>
@@ -49,7 +61,33 @@
                         <div class="input_field">
                             <input type="tel" class="input" id="phone_number" name="phone_number"><br>
                         </div>
-                        <button type="submit" class="identity_data_btn">Обновить данные</button>
+                        <button type="submit" class="personal_account_btn identity_data_btn">Обновить данные</button>
+                    </form>
+                </div>
+                <h1 class="personal_account_header">Адрес доставки</h1>
+                <div class="address_block">
+                    <form id="address_form" autocomplete="off">
+                        <label for="street">Улица</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="street" name="street"><br>
+                        </div>
+                        <label for="house">Дом</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="house" name="house"><br>
+                        </div>
+                        <label for="flat">Квартира</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="flat" name="flat"><br>
+                        </div>
+                        <label for="entrance">Подъезд</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="entrance" name="entrance"><br>
+                        </div>
+                        <label for="door_code">Код двери</label>
+                        <div class="input_field">
+                            <input type="text" class="input" id="door_code" name="door_code"><br>
+                        </div>
+                        <button type="submit" class="personal_account_btn address_submit_btn">Обновить адрес</button>
                     </form>
                 </div>
                 <div class="coupon_container">
@@ -65,6 +103,11 @@
     </section>
     <script src="../logic/coupon_template_generator.js"></script>
     <script src="../logic/order_template_generator.js"></script>
+    <script src="../logic/template-generator.js"></script>
+    <script src="../logic/popup.js"></script>
+    <script src="../logic/mutator-config.js"></script>
+    <script src="../logic/cart-event-listeners.js"></script>
+    <script src="../logic/cart-popup.js"></script>
     <script src="../logic/personal-account.js"></script>
 
 </main>

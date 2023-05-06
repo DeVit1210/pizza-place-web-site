@@ -44,7 +44,7 @@ const register = async (req, res, next) => {
     User.create({
         username: username,
         password: hashedPassword,
-        phoneNumber: phoneNumber
+        phoneNumber: phoneNumber,
     }).then(async response => {
         const cart = new Cart({
             userId: response._id
@@ -109,7 +109,7 @@ const findAll = (req, res, next) => {
 }
 
 const findByUsername = (req, res, next) => {
-    const token = req.body.token;
+    const token = req.headers.authorization;
     try {
         const user = jwt.verify(token, JWT_SECRET);
         console.log("JWT decoded: ", user);
@@ -126,6 +126,18 @@ const findByUsername = (req, res, next) => {
     }
 }
 
+const update = (req, res) => {
+    const token = req.headers.authorization;
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        User.findByIdAndUpdate(user.id, {$set: req.body})
+            .then(response => res.json({status: "ok", user: response}))
+            .catch(err => res.json({status: "error", message: "not found"}))
+    } catch (err) {
+        res.json({message: "invalid access attempt!"})
+    }
+}
+
 module.exports = {
-    register, login, changePassword, findAll, findByUsername, check, JWT_SECRET
+    register, login, changePassword, findAll, findByUsername, check, update, JWT_SECRET
 }

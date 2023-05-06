@@ -1,7 +1,11 @@
+const cartTotalPriceId = document.currentScript.getAttribute('data-price');
+const itemSelector = document.currentScript.getAttribute('data-item');
 function configureMutator() {
-    const targetNode = document.querySelector('.cart_items');
+    console.log(itemSelector);
+    const targetNode = document.querySelector("." + itemSelector);
     const config = { childList: true };
-    const cartTotalPrice = document.getElementById('cart_total_price');
+    console.log(cartTotalPriceId);
+    const cartTotalPrice = document.getElementById(cartTotalPriceId);
     cartTotalPrice.textContent = '0.00';
     const callback = (mutationsList, observer) => {
         for (let mutation of mutationsList) {
