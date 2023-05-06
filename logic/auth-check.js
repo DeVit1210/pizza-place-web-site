@@ -4,9 +4,10 @@ $.ajax({
     headers: {
         "Authorization": localStorage.getItem('token')
     },
-    success: () => {
+    success: (user) => {
         let authButton = document.querySelector(".authorization_button");
-        authButton.innerHTML = "авторизован"
+        console.log(user);
+        authButton.innerHTML = user.nickname ? user.nickname : "авторизован"
         authButton.classList.remove('authorization_button');
         authButton.classList.add('personal_account_button');
         document.querySelector('.personal_account_button').addEventListener('click', () => {

@@ -21,12 +21,12 @@ function isAdmin(username, password) {
     return username === admin_username && password === admin_password;
 }
 
-const check = (req, res) => {
+const check = async (req, res) => {
     const token = req.headers.authorization;
-    if(token) {
+    if (token) {
         try {
             const user = jwt.verify(token, JWT_SECRET);
-            res.json(user);
+            res.json(await User.findById(user.id))
         } catch (err) {
             res.status(400).send(err.message);
         }
