@@ -1,0 +1,38 @@
+<form id="coupon_add_form" autocomplete="off">
+    <label for="coupon_name">Название</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="coupon_name" name="name"><br>
+    </div>
+    <label for="coupon_description">Описание</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="coupon_description" name="description"><br>
+    </div>
+    <label for="min_orders_quantity">Минимальное кол-во заказов</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="min_orders_quantity" name="min_orders_quantity"><br>
+    </div>
+    <label for="min_money_spent">Минимальное кол-во потраченных денег</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="min_money_spent" name="min_money_spent"><br>
+    </div>
+    <label for="coupon_type">Название</label>
+    <div class="input_field">
+        <select autocomplete="off" class="input" id="coupon_type" name="coupon_type">
+            <option class="input">каждая N бесплатно</option>
+            <option class="input">пицца бесплатно</option>
+            <option class="input">временной промежуток</option>
+            <option class="input">первый заказ</option>
+            <option class="input">цена для одного размера</option>
+        </select>
+    </div>
+    <label for="first_param">Первый параметр</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="first_param" name="first_param"><br>
+    </div>
+    <label for="second_param">Второй параметр</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="second_param" name="second_param"><br>
+    </div>
+    <button type="submit" class="admin_button">Добавить купон</button>
+</form>
+<script src="../../logic/add-coupon-form.js"></script>

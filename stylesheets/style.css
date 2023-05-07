@@ -1654,6 +1654,16 @@ footer {
     padding: 20px;
 }
 
+.toppings_block {
+    background-color: #202123;
+    border-radius: 10px;
+    margin: 10px 50px 10px 75px;
+}
+
+.toppings_block_wrapper {
+    padding: 20px;
+}
+
 .card_form_input_wrapper {
     display: flex;
     justify-content: flex-start;
@@ -1674,3 +1684,30 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+
+#delete_coupon_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#delete_topping_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coupon_content_container {
+    max-height: 400px;
+    overflow: auto;
+    color: #f4f9ff;
+    font-family: Montserrat, sans-serif;
+}
+
+/*notes*/
+
+/*add authorization on item-page.html*/
+/*image in toppings*/
+/*change button name on edit*/
+/*fix coupons attaching to users*/
+/*make it impossible to use the same coupon twice for one user*/

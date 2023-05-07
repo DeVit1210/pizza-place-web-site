@@ -1,0 +1,15 @@
+<form id="add_topping_form" autocomplete="off" action="http://localhost:8080/api/toppings/add" method="post" enctype="multipart/form-data">
+    <div class="input_field">
+        <label for="name">Название</label>
+        <input type="text" id="name" name="name" class="input">
+    </div>
+    <div class="input_field">
+        <label for="image">Фото</label>
+        <input type="file" autocomplete="off" class="input" id="image" name="image"><br>
+    </div>
+    <div class="input_field">
+        <label for="price">Стоимость</label>
+        <input type="text" id="price" name="price" class="input">
+    </div>
+    <button type="submit" class="admin_button">Добавить топпинг</button>
+</form>

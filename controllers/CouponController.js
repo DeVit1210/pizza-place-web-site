@@ -20,7 +20,6 @@ function applyCoupon(coupon, items, couponNameAndValue) {
 const add = (req, res) => {
     const couponData = {
         name: req.body.name,
-        date: Date.now() + 7,
         description: req.body.description,
         code: req.body.code,
         message: req.body.message,
@@ -51,7 +50,7 @@ const add = (req, res) => {
         .catch(err => res.json({message: err.message}))
 }
 
-const findAll = (req, res) => {
+const findByUser = (req, res) => {
     const token = req.headers.authorization;
     if(token) {
         try {
@@ -66,11 +65,23 @@ const findAll = (req, res) => {
     } else res.status(400).json({message: "invalid access attempt"});
 }
 
+const findAll = (req, res) => {
+    Coupon.find()
+        .then(response => res.json(response))
+        .catch(err => res.send(err.message))
+}
+
 const find = (req, res) => {
     const id = req.params.id;
     Coupon.findById(id)
         .then(response => res.json(response))
         .catch(err => res.json({message: err.message}))
+}
+
+const del = (req, res) => {
+    Coupon.findByIdAndDelete(req.params.id)
+        .then(coupon => res.json(coupon))
+        .catch(err => res.send(err.message))
 }
 
 const apply = async (req, res) => {
@@ -94,5 +105,5 @@ const apply = async (req, res) => {
 }
 
 module.exports = {
-    add, findAll, find, apply
+    add, findByUser, find, apply, del, findAll
 }

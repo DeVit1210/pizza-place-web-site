@@ -3,16 +3,11 @@ const Schema = mongoose.Schema;
 
 const CouponSchema = new Schema({
     name: String,
-    expiresAt: Date,
     description: String,
     code: String,
     message: String,
     minOrdersQuantity: Number,
     minMoneySpent: Number
-    // users: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // }
 }, {collection: 'coupons'})
 
 CouponSchema.methods.eachNPizzaIsFreeHandler = (items, N) => {

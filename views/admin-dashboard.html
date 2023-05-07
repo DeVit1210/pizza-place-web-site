@@ -69,49 +69,28 @@
     </section>
     <section class="coupons_block">
         <div class="coupon_block_wrapper">
-            <div class="add_coupon_content_container">
-                <form id="coupon_add_form" autocomplete="off">
-                    <label for="coupon_name">Название</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="coupon_name" name="name"><br>
-                    </div>
-                    <label for="coupon_description">Описание</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="coupon_description" name="description"><br>
-                    </div>
-                    <label for="min_orders_quantity">Минимальное кол-во заказов</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="min_orders_quantity" name="min_orders_quantity"><br>
-                    </div>
-                    <label for="min_money_spent">Минимальное кол-во потраченных денег</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="min_money_spent" name="min_money_spent"><br>
-                    </div>
-                    <label for="coupon_type">Название</label>
-                    <div class="input_field">
-                        <select autocomplete="off" class="input" id="coupon_type" name="coupon_type">
-                            <option class="input">каждая N бесплатно</option>
-                            <option class="input">пицца бесплатно</option>
-                            <option class="input">временной промежуток</option>
-                            <option class="input">первый заказ</option>
-                            <option class="input">цена для одного размера</option>
-                        </select>
-                    </div>
-                    <label for="first_param">Первый параметр</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="first_param" name="first_param"><br>
-                    </div>
-                    <label for="second_param">Второй параметр</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="second_param" name="second_param"><br>
-                    </div>
-                    <button type="submit" class="admin_button">Добавить купон</button>
-                </form>
+            <div class="button_container">
+                <button class="admin_button" id="show_coupons">Все товары</button>
+                <button class="admin_button" id="add_coupons">Добавление</button>
+                <button class="admin_button" id="delete_coupons">Удаление</button>
             </div>
+            <div class="coupon_content_container"></div>
+        </div>
+    </section>
+    <section class="toppings_block">
+        <div class="toppings_block_wrapper">
+            <div class="button_container">
+                <button class="admin_button" id="show_toppings">Все товары</button>
+                <button class="admin_button" id="add_toppings">Добавление</button>
+                <button class="admin_button" id="delete_toppings">Удаление</button>
+                <button class="admin_button" id="edit_toppings">Редактирование</button>
+            </div>
+            <div class="toppings_content_container"></div>
         </div>
     </section>
     <script src="../logic/main-info.js"></script>
     <script src="../logic/add-pizza.js"></script>
     <script src="../logic/order-info.js"></script>
     <script src="../logic/add-coupon.js"></script>
+    <script src="../logic/add-topping.js"></script>
 </main>
