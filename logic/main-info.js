@@ -2,6 +2,7 @@ $.ajax({
     url: 'http://localhost:8080/api/order/findToday',
     type: "GET",
     success: (orders) => {
+        console.log(orders)
         console.log(orders.length);
         $('#current_day_orders_quantity').text(orders.length);
         $('#total_current_day_income').text(getTotalIncome(orders))

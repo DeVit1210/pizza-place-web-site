@@ -1568,6 +1568,7 @@ footer {
 }
 
 .all_orders_wrapper {
+    min-height: 300px;
     max-height: 500px;
     overflow: auto;
     scroll-behavior: smooth;
@@ -1627,10 +1628,6 @@ footer {
     margin-right: 30px;
 }
 
-.selected_row {
-    background-color: #ffd05e;
-}
-
 .admin_button {
     height: 30px;
     width: 90%;
@@ -1652,6 +1649,7 @@ footer {
 
 .coupon_block_wrapper {
     padding: 20px;
+    min-height: 300px;
 }
 
 .toppings_block {
@@ -1702,6 +1700,14 @@ footer {
     overflow: auto;
     color: #f4f9ff;
     font-family: Montserrat, sans-serif;
+}
+
+.admin_header {
+    text-align: center;
+}
+
+.toppings_block_wrapper {
+   min-height: 300px;
 }
 
 /*notes*/
