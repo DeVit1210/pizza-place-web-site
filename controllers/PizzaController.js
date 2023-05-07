@@ -63,8 +63,8 @@ const add = (req, res) => {
 
 // update the pizza
 const update = (req, res, next) => {
-    let pizzaID = req.params.id;
-    Pizza.findByIdAndUpdate(pizzaID, req.body)
+    let pizzaName = req.body.name;
+    Pizza.findOneAndUpdate({name: pizzaName}, req.body)
         .then(() => {
             res.json({message: "pizza info updated successfully"})
         })
@@ -75,8 +75,8 @@ const update = (req, res, next) => {
 
 // delete the pizza
 const del = (req, res, next) => {
-    let pizzaID = req.params.id;
-    Pizza.findByIdAndRemove(pizzaID)
+    let pizzaName = req.params.name;
+    Pizza.findOneAndRemove({name: pizzaName})
         .then(() => {
             res.json({message: "pizza has been removed successfully"})
         })
@@ -89,6 +89,16 @@ const del = (req, res, next) => {
 const find = (req, res, next) => {
     let pizzaID = req.params.id;
     Pizza.findById(pizzaID)
+        .then((response) => {
+            res.json(response);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
+const findByName = (req, res) => {
+    Pizza.findOne({"name": req.params.name})
         .then((response) => {
             res.json(response);
         })
@@ -115,5 +125,5 @@ const findBestseller = (req, res) => {
 }
 
 module.exports = {
-    findAll, add, update, del, find, findBy, findBestseller
+    findAll, add, update, del, find, findBy, findByName, findBestseller
 }

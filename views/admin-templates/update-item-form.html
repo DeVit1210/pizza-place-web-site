@@ -1,0 +1,48 @@
+<form id="update_items_form" autocomplete="off" action="http://localhost:8080/api/pizza/update">
+    <label for="name">Название</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="name" name="name"><br>
+    </div>
+    <label for="ingredients">Состав</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="ingredients" name="ingredients"><br>
+    </div>
+    <div class="input_field">
+        <select autocomplete="off" class="input" id="type" name="type">
+            <option class="input">Классические</option>
+            <option class="input">Премиум</option>
+            <option class="input">Острые</option>
+            <option class="input">Легенды</option>
+            <option class="input">Новинки</option>
+        </select>
+    </div>
+    <p>Маленькая:</p>
+    <label for="small_price">Цена</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="small_price" name="small_price">
+    </div>
+    <label for="small_weight">Вес</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="small_weight" name="small_weight"><br>
+    </div>
+    <p>Средняя:</p>
+    <label for="medium_price">Цена</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="medium_price" name="medium_price">
+    </div>
+    <label for="medium_weight">Вес</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="medium_weight" name="medium_weight"><br>
+    </div>
+    <p>Большая:</p>
+    <label for="big_price">Цена</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="big_price" name="big_price">
+    </div>
+    <label for="big_weight">Вес</label>
+    <div class="input_field">
+        <input type="text" autocomplete="off" class="input" id="big_weight" name="big_weight"><br>
+    </div>
+    <button type="submit" class="admin_button">Добавить товар</button>
+</form>
+<script src="../../logic/update-item-form.js"></script>

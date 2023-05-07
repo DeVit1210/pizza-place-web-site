@@ -58,66 +58,20 @@
     </section>
     <section class="items_block">
         <div class="items_block_wrapper">
-            <div class="add_item_form_container">
-                <form id="authorization_form" autocomplete="off" action="http://localhost:8080/api/pizza/add" method="post" enctype="multipart/form-data">
-                    <label for="name">Название</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="name" name="name"><br>
-                    </div>
-                    <label for="picture">Фото</label>
-                    <div class="input_field">
-                        <input type="file" autocomplete="off" class="input" id="picture" name="picture"><br>
-                    </div>
-                    <label for="ingredients">Состав</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="ingredients" name="ingredients"><br>
-                    </div>
-                    <div class="input_field">
-                        <select autocomplete="off" class="input" id="type" name="type">
-                            <option class="input">Классические</option>
-                            <option class="input">Премиум</option>
-                            <option class="input">Острые</option>
-                            <option class="input">Легенды</option>
-                            <option class="input">Новинки</option>
-                        </select>
-                    </div>
-                    <p>Маленькая:</p>
-                    <label for="small_price">Цена</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="small_price" name="small_price">
-                    </div>
-                    <label for="small_weight">Вес</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="small_weight" name="small_weight"><br>
-                    </div>
-                    <p>Средняя:</p>
-                    <label for="medium_price">Цена</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="medium_price" name="medium_price">
-                    </div>
-                    <label for="medium_weight">Вес</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="medium_weight" name="medium_weight"><br>
-                    </div>
-                    <p>Большая:</p>
-                    <label for="big_price">Цена</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="big_price" name="big_price">
-                    </div>
-                    <label for="big_weight">Вес</label>
-                    <div class="input_field">
-                        <input type="text" autocomplete="off" class="input" id="big_weight" name="big_weight"><br>
-                    </div>
-                    <button type="submit" class="admin_form_submit">Добавить товар</button>
-                </form>
+            <div class="button_container">
+                <button class="admin_button" id="show_items">Все товары</button>
+                <button class="admin_button" id="add_items">Добавление</button>
+                <button class="admin_button" id="delete_items">Удаление</button>
+                <button class="admin_button" id="update_items">Редактирование</button>
             </div>
+            <div class="add_item_content_container"></div>
         </div>
     </section>
     <section class="coupons_block">
         <div class="coupon_block_wrapper">
-            <div class="add_item_form_container">
+            <div class="add_coupon_content_container">
                 <form id="coupon_add_form" autocomplete="off">
-                    <label for="name">Название</label>
+                    <label for="coupon_name">Название</label>
                     <div class="input_field">
                         <input type="text" autocomplete="off" class="input" id="coupon_name" name="name"><br>
                     </div>
@@ -151,12 +105,13 @@
                     <div class="input_field">
                         <input type="text" autocomplete="off" class="input" id="second_param" name="second_param"><br>
                     </div>
-                    <button type="submit" class="admin_form_submit">Добавить купон</button>
+                    <button type="submit" class="admin_button">Добавить купон</button>
                 </form>
             </div>
         </div>
     </section>
     <script src="../logic/main-info.js"></script>
+    <script src="../logic/add-pizza.js"></script>
     <script src="../logic/order-info.js"></script>
     <script src="../logic/add-coupon.js"></script>
 </main>

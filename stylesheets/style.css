@@ -1601,25 +1601,37 @@ footer {
 
 .items_block_wrapper {
     padding: 20px;
+    min-height: 300px;
 }
 
-.add_item_form_container {
+.add_item_content_container {
     max-height: 400px;
-    width: 50%;
+    width: 100%;
     overflow: auto;
     color: #f4f9ff;
+    font-family: Montserrat, sans-serif;
 }
 
-.add_item_form_container::-webkit-scrollbar {
+.button_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add_item_content_container::-webkit-scrollbar {
     display: none;
 }
 
-.add_item_form_container .input_field {
-    width: 90%;
+.add_item_content_container .input_field {
+    width: 50%;
     margin-right: 30px;
 }
 
-.admin_form_submit {
+.selected_row {
+    background-color: #ffd05e;
+}
+
+.admin_button {
     height: 30px;
     width: 90%;
     background-color: #d94811;
@@ -1655,4 +1667,10 @@ footer {
 
 .valid_thru_input {
     flex-basis: 20%;
+}
+
+#delete_item_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
