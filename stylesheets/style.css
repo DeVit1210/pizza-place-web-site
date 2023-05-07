@@ -1640,3 +1640,18 @@ footer {
 .coupon_block_wrapper {
     padding: 20px;
 }
+
+.card_form_input_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 90px;
+    align-items: center;
+}
+
+.card_number_input {
+    flex-basis: 60%;
+}
+
+.valid_thru_input {
+    flex-basis: 20%;
+}

@@ -39,7 +39,7 @@
                     <h1>Оформление заказа</h1>
                     <ul class="delivery_types">
                         <li class="delivery_type active_delivery_type">Доставка</li>
-                        <li class="delivery_type">Самовывоз</li>
+<!--                        <li class="delivery_type">Самовывоз</li>-->
                     </ul>
                 </div>
                 <div class="order_making_form_wrapper">
@@ -51,30 +51,30 @@
                         </div>
                         <label for="house">Дом</label>
                         <div class="input_field">
-                            <input type="text" class="input" id="house" name="house"><br>
+                            <input type="text" class="input digit_input" id="house" name="house"><br>
                         </div>
                         <label for="flat">Квартира</label>
                         <div class="input_field">
-                            <input type="text" class="input" id="flat" name="flat"><br>
+                            <input type="text" class="input digit_input" id="flat" name="flat"><br>
                         </div>
                         <label for="entrance">Подъезд</label>
                         <div class="input_field">
-                            <input type="text" class="input" id="entrance" name="entrance"><br>
+                            <input type="text" class="input digit_input" id="entrance" name="entrance"><br>
                         </div>
                         <label for="doorCode">Код двери</label>
                         <div class="input_field">
-                            <input type="text" class="input" id="doorCode" name="doorCode"><br>
+                            <input type="text" class="input digit_input" id="doorCode" name="doorCode"><br>
                         </div>
                     </form>
                     <h3 class="order_making_form_subheader">Информация</h3>
                     <form id="identity_data_form" autocomplete="off">
                         <label for="phone_number">Телефон</label>
                         <div class="input_field">
-                            <input type="tel" class="input" id="phone_number" name="phone_number"><br>
+                            <input class="input" pattern="\+\d{1,3}\s\(\d{1,2}\)\s\d{3}-\d{2}-\d{2}" id="phone_number" name="phone_number"><br>
                         </div>
                         <label for="email">E-mail</label>
                         <div class="input_field">
-                            <input type="email" class="input" id="email" name="email"><br>
+                            <input class="input" id="email" pattern="[A-Za-z0-9]+\@[a-z]+\.[a-z]+" name="email"><br>
                         </div>
                         <label for="coupon">Есть купон?</label>
                         <div class="input_field">
@@ -82,15 +82,21 @@
                         </div>
                         <div class="coupon_apply_btn" style="display: inline-block">Применить</div><br>
                     </form>
-                    <h3 class="order_making_form_subheader">Способ оплаты</h3>
-                    <form class="payment_type_form">
-                        <div class="input_field">
-                            <select class="payment_types input">
-                                <option>Картой</option>
-                                <option>Наличными курьеру</option>
-                            </select>
-                        </div>
-                    </form>
+                    <h3 class="order_making_form_subheader">Оплата</h3>
+                    <div class="credit_card_block">
+                        <form id="card_form" autocomplete="off">
+                            <div class="card_form_input_wrapper">
+                                <div class="input_field card_number_input">
+                                    <label for="number">Номер</label>
+                                    <input type="text" class="input" id="number" name="number" required>
+                                </div>
+                                <div class="input_field valid_thru_input">
+                                    <label for="validity">Действительна до</label>
+                                    <input class="input" pattern="((0[1-9])|(1[0-2]))\/2[3-9]" id="validity" name="validity" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="submit_btn_wrapper">
                         <div class="submit_btn">Отправить</div>
                     </div>
@@ -107,6 +113,8 @@
             </div>
         </div>
     </section>
+    <script src="../logic/validation/validation-setup.js"></script>
+    <script src="../logic/validation/personal-data-validation.js"></script>
     <script src="../logic/template-generator.js"></script>
     <script src="../logic/order-making-cart-template-generator.js"></script>
     <script src="../logic/mutator-config.js" data-price="total_cost" data-item="current_order_container"></script>

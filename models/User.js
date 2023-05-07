@@ -8,6 +8,7 @@ const UserSchema = new Schema({
     phoneNumber: {type: String, required: true },
     nickname: String,
     address: AddressSchema,
+    card: String,
     coupons: [
         {
         type: mongoose.Schema.Types.ObjectId,

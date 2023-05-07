@@ -37,6 +37,10 @@ $.ajax({
             $("#address_form #entrance").val(address.entrance);
             $("#address_form #doorCode").val(address.doorCode);
         }
+        if(user.card) {
+            $('#card_form #number').val(user.card.substring(0, 19))
+            $('#card_form #validity').val(user.card.split(' ')[4]);
+        }
     }
 })
 
@@ -74,20 +78,22 @@ $submitBtn.on('click', () => {
             doorCode: $("#address_form #doorCode").val()
         }
     }
-    $.ajax({
-        url: "http://localhost:8080/api/order/create",
-        type: "POST",
-        contentType: "application/json",
-        headers: {
-            "Authorization": localStorage.getItem('token')
-        },
-        data: JSON.stringify(obj),
-        success: () => {
-            window.location.href = '../views/index.html';
-        },
-        error: (data) => {
-            console.log(data.message);
-        }
+    orderValidation(() => {
+        $.ajax({
+            url: "http://localhost:8080/api/order/create",
+            type: "POST",
+            contentType: "application/json",
+            headers: {
+                "Authorization": localStorage.getItem('token')
+            },
+            data: JSON.stringify(obj),
+            success: () => {
+                window.location.href = '../views/index.html';
+            },
+            error: (data) => {
+                console.log(data.message);
+            }
+        })
     })
 })
 

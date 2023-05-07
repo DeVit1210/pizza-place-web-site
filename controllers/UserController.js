@@ -6,15 +6,6 @@ const JWT_SECRET = "my-jwt-secret-HSDirksjeLd"
 const admin_username = "admin@gmail.com"
 const admin_password = "my_admin_password"
 
-function validateRequestBody(body, callback) {
-    if(!body.username || typeof body.username !== 'string') {
-        callback("Email введен некорректно!");
-    }
-    if(!body.password || typeof body.password !== 'string') {
-        callback("Пароль должен быть длиной 8-15 символов и содержать хотя бы 1 цифру")
-    }
-}
-
 function isAdmin(username, password) {
     return username === admin_username && password === admin_password;
 }
@@ -35,9 +26,6 @@ const check = async (req, res) => {
 
 const register = async (req, res, next) => {
     const {username, password, phoneNumber} = req.body;
-    validateRequestBody(req.body, (message) => {
-        res.status(400).send(message)
-    })
     const hashedPassword = await bcrypt.hash(password, 10);
     User.create({
         username: username,
@@ -48,7 +36,7 @@ const register = async (req, res, next) => {
             userId: response._id
         })
         await cart.save();
-        res.redirect("http://localhost:63343/course-project/views/index.html");
+        res.json("ok");
     }).catch(err => {
         if(err.code === 11000) {
             res.status(400).json({message: "email is already in use"});

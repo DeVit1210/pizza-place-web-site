@@ -59,22 +59,25 @@ $logoutButton.on('click', () => {
 })
 
 const $identityDataButton = $('.identity_data_btn');
-$identityDataButton.on('click', () => {
-    $.ajax({
-        url: "http://localhost:8080/api/user/update",
-        type: "POST",
-        contentType: "application/json",
-        headers: {
-            "Authorization": localStorage.getItem("token")
-        },
-        data: JSON.stringify({
-            nickname: $(".identity_data_form #name").val(),
-            phoneNumber: $(".identity_data_form #phone_number").val()
-        }),
-        success: () => {
-            alert("Личные данные успешно обновлены!");
-        }
-    })
+$identityDataButton.on('click', (event) => {
+    event.preventDefault();
+    identityDataFormValidation(() => {
+        $.ajax({
+            url: "http://localhost:8080/api/user/update",
+            type: "POST",
+            contentType: "application/json",
+            headers: {
+                "Authorization": localStorage.getItem("token")
+            },
+            data: JSON.stringify({
+                nickname: $(".identity_data_form #name").val(),
+                phoneNumber: $(".identity_data_form #phone_number").val()
+            }),
+            success: () => {
+                alert("Личные данные успешно обновлены!");
+            }
+        })
+    });
 })
 
 const $addressSubmitBtn = $('.address_submit_btn');
@@ -98,3 +101,24 @@ $addressSubmitBtn.on('click', () => {
         }
     })
 })
+
+$('.card_submit_btn').on('click', (event) => {
+    event.preventDefault();
+    cardFormValidation(() => {
+        $.ajax({
+            url: "http://localhost:8080/api/user/update",
+            type: "POST",
+            contentType: "application/json",
+            headers: {
+                "Authorization": localStorage.getItem('token')
+            },
+            data: JSON.stringify({
+                card: $cardNumberInput.val() + " " + $validityInput.val()
+            }),
+            success: () => {
+                alert("Данные о карте успешно обновлены!");
+            }
+        })
+    })
+})
+
