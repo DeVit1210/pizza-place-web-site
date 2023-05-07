@@ -11,7 +11,7 @@ const create = async (req, res) => {
         const id = user.id;
         const currentCart = await Cart.findOne({userId: id}).populate("items");
         const order = new Order({
-            userId: id,
+            user: id,
             date: Date.now(),
             items: currentCart.items,
             delivery: req.body.delivery,
@@ -40,7 +40,7 @@ const findByUserId = (req, res, next) => {
         try {
             const user = jwt.verify(token, JWT_SECRET);
             const userId = user.id;
-            Order.find({userId: userId}).populate({
+            Order.find({user: userId}).populate({
                 path: "items",
                 populate: {
                     path: "pizza",
@@ -77,7 +77,10 @@ const findByDate = (req, res) => {
 }
 
 const findAll = (req, res) => {
-    Order.find()
+    Order.find().populate({
+        path: "user",
+        select: "username nickname"
+    })
         .then(response => res.json(response))
         .catch(err => res.status(400).json({message: err.message}))
 }
