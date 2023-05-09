@@ -21,11 +21,9 @@ const add = (req, res) => {
     if(req.files) {
         toppingData.image = '../' + req.files[0].path
     }
-    Topping.create(toppingData).then(response => {
-        res.json({message: "topping successfully added!"})
-    }).catch(err => {
-        res.status(400).json({message: err.message})
-    })
+    Topping.create(toppingData)
+        .then(response => res.redirect('http://localhost:63342/course-project/views/admin-dashboard.html'))
+        .catch(err => res.status(400).json({message: err.message}))
 }
 
 const del = (req, res) => {

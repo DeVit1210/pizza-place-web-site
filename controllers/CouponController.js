@@ -93,6 +93,7 @@ const apply = async (req, res) => {
             const couponPresent = currentUser.coupons.filter(item => item.message === coupon.message).length > 0;
             if(couponPresent) {
                 res.json(applyCoupon(coupon, items, coupon.message))
+                await User.findByIdAndUpdate(user.id, {$pull: {coupons: coupon._id}})
             } else res.json('0');
         } catch (err) {
             res.status(400).json({message: err.message})

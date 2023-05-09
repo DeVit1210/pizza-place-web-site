@@ -58,7 +58,7 @@ function combineMessage(form) {
     let msg = form.querySelector('#coupon_type').value + ":" + form.querySelector('#first_param').value;
     const secondParam = form.querySelector('#second_param');
     if(secondParam.value !== '') {
-        msg += secondParam.value;
+        msg += ":" + secondParam.value;
     }
     return msg;
 }

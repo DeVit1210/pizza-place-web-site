@@ -32,12 +32,12 @@ const add = (req, res) => {
             price: req.body.big_price
         },
         medium: {
-            diameter: 35,
+            diameter: 30,
             weight: req.body.medium_weight,
             price: req.body.medium_price
         },
         small: {
-            diameter: 35,
+            diameter: 25,
             weight: req.body.small_weight,
             price: req.body.small_price
         }
@@ -55,7 +55,7 @@ const add = (req, res) => {
                 pizza.picture = "../" + req.files[0].path;
             }
             Pizza.create(pizza)
-                .then(response => res.json({message: "pizza added successfully"}))
+                .then(response => res.redirect('http://localhost:63342/course-project/views/admin-dashboard.html'))
                 .catch(err => res.json(err));
         })
         .catch(err => res.json(err))

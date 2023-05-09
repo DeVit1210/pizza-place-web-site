@@ -42,10 +42,12 @@ const findByUserId = (req, res, next) => {
                 path: "items",
                 populate: {
                     path: "pizza",
-                    select: "name"
                 }
             })
-                .then(orders => res.json(orders))
+                .then(orders => {
+                    console.log(orders);
+                    res.json(orders)
+                })
                 .catch(err => res.status(400).json({message: err.message}))
         } catch (err) {
             res.status(400).json({message: err.message})

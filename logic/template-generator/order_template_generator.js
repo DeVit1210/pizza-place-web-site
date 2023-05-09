@@ -4,7 +4,6 @@ function getDate(dateStringFormat) {
     return date.toLocaleDateString('en-US', options)
 }
 function createPreviousOrderItemTemplate(order) {
-    console.log(order);
     const previousOrder = createElement('div', 'previous_order_item');
     const dateTimeAndDelivery = createElement('div', 'order_datetime_and_delivery');
     dateTimeAndDelivery.append(createElement('p', 'order_datetime', getDate(order.date)));
@@ -12,10 +11,11 @@ function createPreviousOrderItemTemplate(order) {
     previousOrder.append(dateTimeAndDelivery);
     const orderItemsContainer = createElement('div', 'order_items_container');
     order.items.forEach(item => {
+        console.log(item);
         const orderItemWrapper = createElement('div', 'order_item_wrapper');
         const orderItemName = createElement('p', "order_item_name");
         orderItemName.append(createElement('span', 'order_item_name', item.pizza.name + ", "))
-        orderItemName.append(createElement('span', 'order_item_size', getSizeInCm(item.size) + "cм."))
+        orderItemName.append(createElement('span', 'order_item_size', getSizeInCm(item.size) + "cм, "))
         orderItemName.append(createElement('span', 'order_item_dough_size', item.dough));
         orderItemWrapper.append(orderItemName);
         orderItemWrapper.append(createElement('p', 'order_item_quantity', item.quantity + "шт."))

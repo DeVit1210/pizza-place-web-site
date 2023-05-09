@@ -14,6 +14,13 @@ $.ajax({
                 $('#current_day_popular_pizza').text(pizza.name)
             }
         })
+        $.ajax({
+            url: 'http://localhost:8080/api/user',
+            type: "GET",
+            success: users => {
+                $('#total_user_quantity').text(users.length)
+            }
+        })
     }
 })
 

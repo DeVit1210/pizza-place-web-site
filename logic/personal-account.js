@@ -49,6 +49,10 @@ $.ajax({
             $("#address_form #entrance").val(address.entrance);
             $("#address_form #doorCode").val(address.doorCode);
         }
+        if(user.card) {
+            $('#card_form #number').val(user.card.substring(0, 19))
+            $('#card_form #validity').val(user.card.split(' ')[4]);
+        }
     }
 })
 

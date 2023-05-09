@@ -461,6 +461,7 @@ main {
 .slider {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
     border-radius: 10px;
@@ -468,9 +469,10 @@ main {
 
 .card {
     height: 700px;
-    width: 425px;
+    width: 400px;
     background-color: black;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .card_img_wrapper {
@@ -501,6 +503,7 @@ main {
     color: #f4f9ff;
     margin-left: 65px;
     margin-bottom: 25px;
+    margin-right: 10px;
 }
 
 .pizza_weight_and_diameter {
@@ -997,6 +1000,7 @@ footer {
     background-color: black;
     height: 220px;
     border-radius: 15px;
+    margin-bottom: 7px;
 }
 
 .topping.active {
@@ -1561,6 +1565,14 @@ footer {
     margin: 0;
 }
 
+#total_user_quantity {
+    font-family: Appetite, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    color: white;
+    margin: 0;
+}
+
 .all_orders_info {
     background-color: #202123;
     border-radius: 10px;
@@ -1721,9 +1733,3 @@ td {
 .toppings_block_wrapper {
    min-height: 300px;
 }
-
-
-/*notes*/
-
-/*add authorization on item-page.html*/
-/*make it impossible to use the same coupon twice for one user*/

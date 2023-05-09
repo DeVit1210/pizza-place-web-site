@@ -72,7 +72,7 @@ function loadToppings(toppings) {
                 totalToppingsCost -= toppingCost
             } else {
                 toppingCard.classList.add('active')
-                pizzaCost.textContent = String(currentPizzaCost + toppingCost);
+                pizzaCost.textContent = String((currentPizzaCost + toppingCost).toFixed(2));
                 totalToppingsCost += toppingCost;
             }
         })
@@ -119,7 +119,7 @@ function addEventListeners(item) {
 function changeProperties(configuration) {
     pizzaDiameter.textContent = String(configuration.diameter);
     pizzaWeight.textContent = String(configuration.weight);
-    pizzaCost.textContent = String(configuration.price + totalToppingsCost);
+    pizzaCost.textContent = String((configuration.price + totalToppingsCost).toFixed(2));
 }
 $('.item_add_cart_button').on('click', () => {
     const cartItem = {
