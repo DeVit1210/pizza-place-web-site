@@ -25,11 +25,9 @@ const create = async (req, res) => {
         }).then(() => {
             res.json({message: "order created successfully!"})
         }).catch(err => {
-            console.log(err.message);
             res.status(400).json({message: err.message})
         })
     } catch (err) {
-        console.log(err.message);
         res.status(400).json({message: err.message})
     }
 }

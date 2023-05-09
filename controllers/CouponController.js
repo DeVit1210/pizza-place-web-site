@@ -26,22 +26,20 @@ const add = (req, res) => {
         minOrdersQuantity: req.body.minOrdersQuantity,
         minMoneySpent: req.body.minMoneySpent
     }
-    console.log(couponData);
     Coupon.create(couponData)
         .then(coupon => {
-            res.json(coupon)
             User.find()
                 .then(async users => {
                     for (const user of users) {
-                        const orders = await Order.find({userId: user._id}).lean();
+                        const orders = await Order.find({user: user._id}).lean();
                         const userOrdersQuantity = orders.length;
                         const userMoneySpent = orders.reduce((accumulator, currentOrder) => {
                             return accumulator + currentOrder.totalCost
                         }, 0);
                         if (coupon.minOrdersQuantity <= userOrdersQuantity && coupon.minMoneySpent <= userMoneySpent) {
-                            console.log(user._id);
-                            User.findByIdAndUpdate(user._id,
-                                {$push: {coupons: coupon._id}}
+                            await User.findByIdAndUpdate(user._id,
+                                {$push: {coupons: coupon._id}},
+                                { new: true, useFindAndModify: false }
                             )
                         }
                     }

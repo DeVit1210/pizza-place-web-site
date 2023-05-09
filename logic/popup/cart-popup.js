@@ -37,7 +37,7 @@ $cartOrderButton.on('click', () => {
             "Authorization": localStorage.getItem('token')
         },
         success: () => {
-            window.location.href = '../views/order-making.html';
+            window.location.href = 'http://localhost:63342/course-project/views/order-making.html';
         },
         error: () => {
             closeCart();

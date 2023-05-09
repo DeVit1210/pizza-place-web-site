@@ -1584,14 +1584,15 @@ footer {
 }
 
 
-.order_table_container table {
+table {
     border: 3px solid #d94811;
     border-radius: 10px;
 }
 
 
-.order_table_container td {
-    min-width: 150px;
+td {
+    min-width: 120px;
+    text-align: center;
 }
 
 .items_block {
@@ -1702,6 +1703,17 @@ footer {
     font-family: Montserrat, sans-serif;
 }
 
+.toppings_content_container {
+    max-height: 400px;
+    overflow: auto;
+    color: #f4f9ff;
+    font-family: Montserrat, sans-serif;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
 .admin_header {
     text-align: center;
 }
@@ -1710,10 +1722,8 @@ footer {
    min-height: 300px;
 }
 
+
 /*notes*/
 
 /*add authorization on item-page.html*/
-/*image in toppings*/
-/*change button name on edit*/
-/*fix coupons attaching to users*/
 /*make it impossible to use the same coupon twice for one user*/

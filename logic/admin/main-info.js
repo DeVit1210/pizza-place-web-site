@@ -18,7 +18,7 @@ $.ajax({
 })
 
 $('#admin_logout').on('click', () => {
-    window.location.href = '../views/index.html';
+    window.location.href = 'http://localhost:63342/course-project/views/index.html';
 })
 function getTotalIncome(orders) {
     return orders.reduce((accumulator, currentOrder) => {

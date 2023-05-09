@@ -4,12 +4,12 @@ const $showCouponButton = $('#show_coupons')
 const $deleteCouponButton = $('#delete_coupons')
 $addCouponButton.on('click', () => {
     $couponsContainer.empty();
-    $couponsContainer.load('../views/admin-templates/add-coupon-form.html')
+    $couponsContainer.load('../../views/admin-templates/add-coupon-form.html')
 })
 
 $deleteCouponButton.on('click', () => {
     $couponsContainer.empty();
-    $couponsContainer.load('../views/admin-templates/delete-coupon-form.html')
+    $couponsContainer.load('../../views/admin-templates/delete-coupon-form.html')
 })
 
 $showCouponButton.on('click', () => {

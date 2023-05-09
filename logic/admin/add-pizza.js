@@ -6,7 +6,7 @@ $editItemsButton = $('#update_items')
 
 $addItemsButton.on('click', () => {
     $addItemContentContainer.empty();
-    $addItemContentContainer.load('../views/admin-templates/add-item-form.html');
+    $addItemContentContainer.load('../../views/admin-templates/add-item-form.html');
 })
 
 $showItemsButton.on('click', () => {
@@ -49,10 +49,10 @@ $showItemsButton.on('click', () => {
 
 $deleteItemsButton.on('click', () => {
     $addItemContentContainer.empty();
-    $addItemContentContainer.load('../views/admin-templates/delete-item-form.html');
+    $addItemContentContainer.load('../../views/admin-templates/delete-item-form.html');
 })
 
 $editItemsButton.on('click', () => {
     $addItemContentContainer.empty();
-    $addItemContentContainer.load('../views/admin-templates/update-item-form.html')
+    $addItemContentContainer.load('../../views/admin-templates/update-item-form.html')
 })

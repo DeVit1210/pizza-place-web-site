@@ -7,17 +7,17 @@ const $showToppingsButton = $('#show_toppings');
 
 $addToppingsButton.on('click', () => {
     $toppingsContentContainer.empty();
-    $toppingsContentContainer.load('../views/admin-templates/add-topping-form.html')
+    $toppingsContentContainer.load('../../views/admin-templates/add-topping-form.html')
 })
 
 $editToppingsButton.on('click', () => {
     $toppingsContentContainer.empty();
-    $toppingsContentContainer.load('../views/admin-templates/update-topping-form.html')
+    $toppingsContentContainer.load('../../views/admin-templates/update-topping-form.html')
 })
 
 $deleteToppingsButton.on('click', () => {
     $toppingsContentContainer.empty();
-    $toppingsContentContainer.load('../views/admin-templates/delete-topping-form.html')
+    $toppingsContentContainer.load('../../views/admin-templates/delete-topping-form.html')
 })
 
 $showToppingsButton.on('click', () => {

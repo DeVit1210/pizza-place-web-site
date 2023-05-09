@@ -18,8 +18,8 @@ const add = (req, res) => {
         name: name,
         price: price
     }
-    if(req.file) {
-        toppingData.image = '../' + req.file[0].path
+    if(req.files) {
+        toppingData.image = '../' + req.files[0].path
     }
     Topping.create(toppingData).then(response => {
         res.json({message: "topping successfully added!"})
@@ -31,7 +31,7 @@ const add = (req, res) => {
 const del = (req, res) => {
     Topping.findByIdAndDelete(req.params.id)
         .then(response => res.json(response))
-        .catch(err => res.send(err.message))
+        .catch(err => res.status(400).send(err.message))
 }
 
 const findOne = (req, res) => {

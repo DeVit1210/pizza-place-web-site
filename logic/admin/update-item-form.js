@@ -5,6 +5,7 @@ pizzaToUpdateInput.addEventListener('change', () => {
         url: "http://localhost:8080/api/pizza/find/" + name,
         type: "GET",
         success: (pizza) => {
+            console.log(pizza);
             document.getElementById('ingredients').value = pizza.ingredients;
             document.getElementById('type').value = pizza.itemType;
             document.getElementById('small_price').value = pizza.configuration.small.price;
@@ -27,7 +28,7 @@ document.querySelector('#update_items_form .admin_button').addEventListener('cli
         data: JSON.stringify({
             name: pizzaToUpdateInput.value,
             ingredients: document.querySelector('#update_items_form #ingredients').value,
-            itemType: document.querySelector('#update_items_form #type').value,
+            itemType: document.querySelector('#update_items_form #type').value.toLowerCase(),
             configuration: {
                 small: {
                     diameter: 25,

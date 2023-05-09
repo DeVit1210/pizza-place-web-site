@@ -139,7 +139,7 @@ $('.item_add_cart_button').on('click', () => {
             item: cartItem
         }),
         success: () => {
-            window.location.href = "../views/menu.html"
+            window.location.href = "http://localhost:63342/course-project/views/menu.html"
         }
     })
 })

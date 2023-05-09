@@ -26,7 +26,7 @@ submitBtn.addEventListener('click', () => {
                 authButton.classList.remove('authorization_button');
                 authButton.classList.add('personal_account_button');
                 document.querySelector('.personal_account_button').addEventListener('click', () => {
-                    window.location.href = '../views/personal-account.html';
+                    window.location.href = 'http://localhost:63342/course-project/views/personal-account.html';
                 })
                 authButton.removeEventListener('click', handleAuthButtonClick)
                 closePopup();

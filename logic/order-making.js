@@ -59,7 +59,7 @@ function applyCouponListener(items) {
                 items: items
             }),
             success: (discount) => {
-                const previousTotalCost = Number($orderTotalCost);
+                const previousTotalCost = Number($orderTotalCost.text());
                 $orderTotalCost.text((previousTotalCost - discount).toFixed(2));
             }
         })
@@ -88,7 +88,7 @@ $submitBtn.on('click', () => {
             },
             data: JSON.stringify(obj),
             success: () => {
-                window.location.href = '../views/index.html';
+                window.location.href = "http://localhost:63342/course-project/views/menu.html"
             },
             error: (data) => {
                 console.log(data.message);
