@@ -1,5 +1,5 @@
 # pizza-place-web-site
-This is a full-stake application for organizing the work of pizzeria.
+This is a full-stack application for organizing the work of pizzeria.
 
 Server side implemented by using <b>client-server architecture</b> and <b>Model-View-Controller (MVC)</b> pattern. 
 
